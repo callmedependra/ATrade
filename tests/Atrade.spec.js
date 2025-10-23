@@ -1,56 +1,47 @@
-// import { test, expect } from '@playwright/test';
+//$env:OPTION='Sell'; npx playwright test tests/Atrade.spec.js --headed --debug
+//$env:OPTION='Buy'; npx playwright test tests/Atrade.spec.js --headed --debug 
 
-// test.describe('@smoke @critical ATrade login & automation',()=>{
-//     test('login of ATrade', async({page})=>{
-//     await page.goto('https://uat.ssl.com.np/atsweb/login');
-//      await page.locator('#txtUserName').click();
-//   await page.locator('#txtUserName').fill('Dependra');
-//   await page.locator('#txtPassword').click();
-//   await page.locator('#txtPassword').fill('Test@12345');
-//   await page.locator('.geekmark').click();
-//   await page.getByRole('button', { name: 'Login' }).click();
-//   await page.getByRole('menuitem', { name: 'Orders' }).click();
-//   await page.getByRole('cell', { name: 'Buy' }).click();
-//   await page.getByRole('textbox').nth(4).click();
-  // await page.getByRole('option', { name: '202202092931053 ( - Sagar' }).click();
-  // await page.locator('.dijitReset.dijitRight.dijitButtonNode.dijitArrowButton.dijitDownArrowButton.dijitArrowButtonContainer.dijitDownArrowButtonHover > .dijitReset').click();
-  // await page.locator('#debtorder_0_cmbClientAcc').fill('202202092931053 ( - Sagar Khatiwada-20210905418--)');
-  // await page.locator('#debtorder_0_txtSecurity').click();
-  // await page.locator('.dijitReset.dijitRight.dijitButtonNode.dijitArrowButton.dijitDownArrowButton.dijitArrowButtonContainer.dijitDownArrowButtonHover > .dijitReset').click();
-  // await page.locator('#debtorder_0_txtSecurity').fill('karna');
-  // await page.getByRole('option', { name: 'KRBL(Karnali Development Bank' }).click();
-  // await page.locator('#debtorder_0_spnQuantity').click();
-  // await page.locator('#debtorder_0_spnQuantity').fill('100');
-  // await page.locator('#debtorder_0_spnPrice').click();
-  // await page.locator('#debtorder_0_spnPrice').fill('267');
-  // await page.locator('#debtorder_0_cmbTif > tbody > tr > .dijitReset.dijitRight > .dijitReset.dijitArrowButtonInner').click();
-  // await page.getByRole('cell', { name: 'DAY', exact: true }).click();
-  // await page.getByRole('button', { name: 'Buy', exact: true }).click();
-  // await page.getByRole('button', { name: 'Yes' }).click();
-//   await page.getByText('Active Order Book', { exact: true }).click();
-//   await page.pause();
-//     })
-// })
-
-
-
+// Importing the Playwright test module
 import { test } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { OrderPage } from '../pages/OrderPage';
+
+// Importing Page Object Model (POM) classes
+import { LoginPage } from '../pages/LoginPage'; // Handles login-related actions
+import { OrderPage } from '../pages/OrderPage'; // Handles order-related actions
+
+// Importing test data from a JSON file (credentials, order info, etc.)
 import data from '../data/testData.json';
 
+// Test suite description — grouping related tests together
 test.describe('@smoke @critical ATrade login & automation', () => {
+
+  // Define a single test case
   test('should login and place a buy order', async ({ page }) => {
+
+    // Create instances of page objects, passing in the Playwright 'page' object
     const loginPage = new LoginPage(page);
     const orderPage = new OrderPage(page);
 
+    // Step 1: Navigate to the login page
     await loginPage.goto();
+
+    // Step 2: Perform login using credentials from test data
     await loginPage.login(data.username, data.password);
 
+    // Step 3: Navigate to the Orders section of the application
     await orderPage.navigateToOrders();
-    await orderPage.placeBuyOrder(data.client, data.security, data.quantity, data.price);
 
+    // Step 4: Place a buy order using test data values
+    await orderPage.placeBuyOrder(
+      data.client,    // Client account identifier
+      data.security,  // Security (stock/bond) name or symbol
+      data.quantity,  // Quantity of securities to buy
+      data.price      // Price per unit
+    );
+
+    // Step 5: Open the "Active Order Book" page to verify order placement
     await page.getByText('Active Order Book', { exact: true }).click();
+
+    // Step 6: Pause the test for debugging (manual inspection in browser)
     await page.pause();
   });
 });
