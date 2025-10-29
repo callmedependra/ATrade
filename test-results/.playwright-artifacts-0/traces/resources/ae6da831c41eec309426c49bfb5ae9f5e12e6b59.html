@@ -1,0 +1,32 @@
+<div id="deleteBasket">
+	<div dojoType="dijit.form.Form" id="deleteBasketForm"
+		jsId="deleteBasketForm" name="deleteBasketForm" action="client"
+		encType="multipart/form-data" method="post" onSubmit="return false;">
+		<input type="hidden" id="action" name="action" value="deleteBasket" />
+		<input type="hidden" id="format" name="format" value="json" />
+		<div class="functionBar">
+			<table width="250">
+				<tr>
+					<td width="55"><span atLangID="javascriptDeleteBasket">Basket</span></td>
+					<td width="5">:</td>
+					<td>
+						<select id="dltBasketddl" name="dltBasketddl" dojoType="dijit.form.Select" style="width:90px;" ></select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="popFooter">
+			<table>
+				<tr>
+					<td width="205" align="right">
+						<button dojoType="dijit.form.Button" name ="close" id="btnDltBasketSubmit"  atLangID="javascriptDltBasketSubmitBtn">
+						Submit</button>
+						<button dojoType="dijit.form.Button" name ="close" id="btnDltBasketClose"  atLangID="javascriptDltBasketCloseBtn">
+						Close</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

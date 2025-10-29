@@ -1,0 +1,63 @@
+<div id="managerStatus">
+	<div class="functionBar">
+    	<table width='600px' border="0" cellpadding="0" cellspacing="0">
+    		<tr>
+   				<td width="70px" align="left" id="managerStatusLblSide" atLangID="javascriptSide"></td>
+		    	<td width="5px">:</td>
+		    	<td width="85px" align="left">
+		    		<select id ="managerStatusCmbSide" name="cmbSide"  dojoType="dijit.form.Select"  style="width:70px !important;" class="BS_ISO">
+			        	<option value="ALL">ALL</option>
+			        	<option value="BUY">BUY</option>
+			        	<option value="SELL">SELL</option> 
+			      	</select>
+			    </td>
+			    <td width="15px"></td>
+		    	<td width="30px">
+					<span id="managerStatuslblFromDate" atLangID="javascriptFrom" >From Date</span>
+				</td>
+				 <td width="5px" align="left">:</td>
+				<td width="85px">	
+					<span><input id="managerStatusDdlFromDate" dojoType="dijit.form.DateTextBox" style="width:75px;" value="now" constraints="{selector : 'date',datePattern:'MM/dd/yyyy'}"/>
+					</span>
+				</td>
+				<td width="10" align="left" valign="middle"><span id="manStatusRefreshCursor"></span></td>
+    		</tr>
+    		<tr>
+   				<td width="70px" align="left" id="managerStatusLblClientAcc" atLangID="javascriptClient"></td>
+		    	<td width="5px">:</td>
+		    	<td width="85px" align="left">
+		    		<select	id="managerStatusCmbClientAcc" name="cmbClientAcc" 
+									dojoType="dijit.form.ComboBox"  trim="true" class="BS_ISO" uppercase="true" autoComplete="false" style="width:140px !important;"></select>
+			    </td>
+			    <td width="15px"></td>
+		    	<td width="30px">
+					<span id="managerStatuslblToDate" atLangID="javascriptDateTo" >To Date</span>
+				</td>
+				 <td width="5px" align="left">:</td>
+				<td width="85px"  >	
+					<span><input id="managerStatusDdlToDate" dojoType="dijit.form.DateTextBox" style="width:75px;" value="now" constraints="{selector : 'date',datePattern:'MM/dd/yyyy'}"/>
+					</span>
+				</td>
+				<td >
+					<button type ="button" data-dojo-type="dijit.form.Button" id="managerStatusSearch" >Search</button>
+				</td>
+    		</tr>
+		</table>
+		
+	</div>
+	<div class="popupBody">
+		<div id = "managerStatusDataGrid" dojoType = "dijit.layout.ContentPane"></div>
+	</div>
+	<div class="popFooter">
+		<table>
+			<tr>
+				<td width="540"></td>
+				<td>
+					<div>
+						<button type ="button" data-dojo-type="dijit.form.Button" id="butCloseManStatus" >Close</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

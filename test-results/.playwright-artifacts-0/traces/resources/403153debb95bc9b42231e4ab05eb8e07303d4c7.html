@@ -1,0 +1,115 @@
+<div id="ohlc">
+	<div class="functionBar blueText">
+  	<table>
+  	<tr>
+  		<td width="25px">
+			<span id="_atrad_lblFromDateId" atLangID="javascriptFrom" >From Date</span>
+		</td>
+ 		<td width="5px" align="left">:</td>
+		<td width="85px"  >	
+			<span>
+			<input id="ohlcDdlFromDate" dojoType="dijit.form.DateTextBox" style="width:75px;" value="now" constraints="{selector : 'date',datePattern:'MM/dd/yyyy'}"/>
+			</span>
+		</td>
+		<td width="10px">
+			<span id="_atrad_lblToDateId" atLangID="javascriptaccountStatementDateTo" >To Date</span>
+		</td>
+ 		<td width="5px" align="left"><span>:</span></td>
+		<td width="85px">	
+	 		<span>
+	 		<input id="ohlcDdlToDate" dojoType="dijit.form.DateTextBox" style="width:75px;" value="now" constraints="{datePattern:'MM/dd/yyyy'}"/>
+			</span>
+		<td width="40px">
+			<span atLangID="javascriptPortfolioSecurity">Security</span>
+		</td>
+ 		<td width="5px">
+ 			<span>:</span>
+ 		</td>
+		<td width="100px">	
+	 		<span>
+	 		<input	id="ohlcSecurityddl" name="ddlSecurity" 
+							dojoType="dijit.form.ComboBox"  style="width:103px; float: left;" autoComplete="false"></input>
+			</span>	
+		</td>
+		<td width="20px">
+			<span >Asset</span>
+		</td>
+ 		<td width="5px">
+ 			<span>:</span>
+ 		</td>
+		<td width="60px">	
+		 	<select id="ohlcAsset" name="ohlcAsset" dojoType="dijit.form.ComboBox" autoComplete="false" style="width:55px; " >
+	     		<option value="1">Equity</option>
+	     		 <option value="4">MF</option>
+	     		 <option value="5">NCD</option> 	         	   		
+	       	</select>	
+		</td>
+		<td>
+			<span id="imgAnnouncementRefreshCursor" class="mtsRefreshCursor"></span>
+		</td>
+		<td>
+			<button dojoType="dijit.form.Button" type="button" id="ohlcClearBut">Clear</button>
+		</td>
+		<td>
+			<button dojoType="dijit.form.Button" type="button" id="ohlcSearchBut">Search</button>
+		</td>
+		<!--  
+		<td align="right" width="60">
+			<div dojoType="dijit.form.Button" id="printOHLC"></div>
+			<div dojoType="dijit.form.Button" id="saveOHLC"></div>			
+		</td>
+		-->
+		<td align="right">
+			<button dojoType="dijit.form.Button" type="button" id="printOHLC"></button>
+		</td>
+		<td align="right">
+			<button dojoType="dijit.form.Button" type="button" id="saveOHLC"></button>
+		</td>
+  	</tr>  
+  	<tr height="5px">
+  		<td width="25px">
+			<span >Board</span>
+		</td>
+ 		<td width="5px">
+ 			<span>:</span>
+ 		</td>
+		<td width="85px">	
+		 	<select id="ohlcBoard" name="ohlcBoard" dojoType="dijit.form.ComboBox" autoComplete="false" style="width:75px; " >
+	     		<option value="ALL">All</option>
+	         	<option value="REGULAR">Regular</option>	        	   		
+	       	</select>	
+		</td>
+		<td colspan="14"></td>
+	</tr>
+	</table>
+	</div>
+	<div class="popupBody">
+		<div class="gridBg" id="grdOHLC">
+		</div>
+		<div class="popFooter">
+
+		<table>
+			<tr>
+				<td width="120"></td>
+				<td>
+					<div class="inline">
+						<span id="ohlcPreBtnContainer" >
+							<button dojoType="dijit.form.Button" type="button" 	id="ohlcBtnPreviousPageBut" atLangID="javascriptMarketTimeSalePrevButLbl">Previous</button>
+						</span>
+						<span id="lblNavigation"  atLangID="javascriptMarketTimeSaleNavigation">Go to:</span>
+						<input id ="ohlcSpnPageNoBox" required="true"  name="spnPageNoBox" dojoType="dijit.form.NumberSpinner" style="width: 100px;" value= '1', constraints="{min:1}" /><span><span id="lblOfText"  atLangID="javascriptMarketTimeSaleOfText">of</span><span id="ohlcLblPageNo" >1</span>
+						<button dojoType="dijit.form.Button" type="button" 	id="ohlcBtnGoBut" atLangID="javascriptMarketTimeSaleGoButLbl">Go</button></span>
+						<span id="ohlcNextBtnContainer"><button dojoType="dijit.form.Button" type="button" 	id="ohlcBtnNextPageBut" atLangID="javascriptMarketTimeSaleNextButLbl">Next</button></span>
+					</div>
+				</td>
+				<td width="50"></td>
+				<td>
+					<div>
+						<button data-dojo-type="dijit.form.Button" id="butOHLCClose">Close</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>	
+

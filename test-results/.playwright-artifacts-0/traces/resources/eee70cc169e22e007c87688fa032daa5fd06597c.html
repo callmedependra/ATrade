@@ -1,0 +1,108 @@
+<div id="advisorClientInquiry" >
+	<div class="functionBar">
+		<div style="float: left;">
+			<table border="0" cellpadding="0" cellspacing="0" width="450px">
+				<tr>
+					<td id="advisorClientInqrylblMappedCdsAcc" style="width:20%;" atLangID="javascriptAdvisorClientInquirylblMappedCdsAcc">Mapped CDS Acc No</td>
+					<td width="5">:</td>
+					<td>	
+						<select id="advisorClientInqryMappedCdsAcc" name="advisorClientInqryMappedCdsAcc" dojoType="dijit.form.ComboBox" style="width:240px"></select>						
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" height="5px"></td>
+				</tr>
+				<tr>
+					<td id="advisorClientInqrylblAdvisor" style="width:20%;" atLangID="javascriptAdvisorClientInquiryAdvisor">Advisor Code</td>
+					<td width="5">:</td>
+					<td>	<select id="advisorClientInqryAdvisorCode" name="advisorClientInqryAdvisorCode" dojoType="dijit.form.ComboBox" ></select> </td>
+				</tr>
+				<tr>
+					<td colspan="3" height="5px"></td>
+				</tr>
+				<tr>
+					<td id="advisorClientInqrylblCustodial" style="width:20%;" atLangID="javascriptAdvisorClientInquiryCustodial">Custodial</td>
+					<td width="5">:</td>
+					<td>	
+						<select id="advisorClientInqryCustodial" name="advisorClientInqryCustodial" dojoType="dijit.form.Select" style="width:60px">
+							<option value="ALL">ALL</option>
+							<option value="Yes">YES</option>
+							<option value="No">NO</option>
+						</select>
+					 </td>
+				</tr>
+			</table>
+		</div>
+		<table>
+			<tr>
+					<td id="advisorClientInqrylblALLCdsAcc" style="width:20%;">
+						<input id="advCDSManualcheck" dojotype="dijit.form.CheckBox" name="advCDSManualcheck" value="on"/> 
+						<span atLangID="javascriptAdvisorClientInquirylblAllCdsAcc"> Other CDS Acc No</span>
+					</td>
+					<td width="5">:</td>
+					<td>	
+						<select id="advisorClientInqryALLCdsAcc" name="advisorClientInqryALLCdsAcc" dojoType="dijit.form.ComboBox" autoComplete="false" type="text" style="width:240px"></select> 
+						<button dojoType="dijit.form.Button" id="btnAdvClientGo"><span atLangID="javascriptGo">Go</span></button> 
+					</td>
+			</tr>
+			<tr>
+				<td colspan="3" height="5px"></td>
+			</tr>
+			<tr>
+				<td id="advisorClientInqrylblName" style="width:20%;" atLangID="javascriptAdvisorClientInquiryName">Name</td>
+				<td width="5">:</td>
+				<td>	
+					<input id="advisorClientInqryClientName" name="advisorClientInqryClientName" dojoType="dijit.form.TextBox" style="width:240px"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" height="5px"></td>
+			</tr>
+			<tr>
+				<td id="advisorClientInqrylblTel" style="width:20%;" atLangID="javascriptAdvisorClientInquiryTel">Tel No</td>
+				<td width="5">:</td>
+				<td>	
+					<input id="advisorClientInqryTel" name="advisorClientInqryTel" dojoType="dijit.form.TextBox" />
+					<span id="advisorClientInquiryRefreshCursor"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right">
+					<button dojoType="dijit.form.Button"  class="advisorClientInquirySearchBtn" type="submit" id="btnAdvisorClientInquirySearch"><span atLangID="javascriptSearchBtnText">Search</span></button>
+					<button dojoType="dijit.form.Button"  class="advisorClientInquirySearchBtn" type="button" id="btnAdvisorClientInquiryClear"><span atLangID="javascriptClearBtnText">Clear</span></button>
+					<div dojoType="dijit.form.Button" id="printAdvisorClientInquiry"></div>
+					<div dojoType="dijit.form.Button" id="saveAdvisorClientInquiry"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+    <div class="popupBody">
+		<div id="advisorClientInquiryDatagrid" dojoType="dijit.layout.ContentPane"></div> 
+	</div>
+	<div class="popFooter">
+		<table>
+			<tr>
+				<td width="250">
+				</td>
+				<td>
+					<div class="inline">
+						<span id="advisorClientInqryPreBtnContainer">
+							<button dojoType="dijit.form.Button" type="button" 	id="advisorClientInqryBtnPreviousPage" atLangID="javascriptMarketTimeSalePrevButLbl">Previous</button></span>
+							<span id="advisorClientInqryLblNavigation"  atLangID="javascriptClientInquiryNavigation">Go to:</span><input id ="advisorClientInqrySpnPageNoBox" required="true"  name="spnPageNoBox" dojoType="dijit.form.NumberSpinner" style="width: 100px;" value= '1', constraints="{max:1,min:1}" /><span><span id="advisorClientInqryLblOfText"  atLangID="javascriptMarketTimeSaleOfText">of</span><span id="advisorClientInqryLblPageNo" >1</span><button
+							dojoType="dijit.form.Button" type="button" 	id="advisorClientInqryBtnGo" atLangID="javascriptMarketTimeSaleGoButLbl">Go</button></span><span id="advisorClientInqryNextBtnContainer"><button
+							dojoType="dijit.form.Button" type="button" 	id="advisorClientInqryBtnNextPage" atLangID="javascriptMarketTimeSaleNextButLbl">Next</button>
+						</span>
+					</div>
+				</td>
+				<td width="195">
+				</td>
+				<td>
+					<div>
+						<button dojoType="dijit.form.Button" type="button"
+							 id="butAdvisorClientInquiryClose">&nbsp;Close&nbsp;</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div> 

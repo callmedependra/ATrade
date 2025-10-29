@@ -35,7 +35,8 @@ test.describe('@smoke @critical ATrade login & automation', () => {
       data.client,    // Client account identifier
       data.security,  // Security (stock/bond) name or symbol
       data.quantity,  // Quantity of securities to buy
-      data.price      // Price per unit
+      // data.price      // Price per unit
+      // price = null → uses live LTP!
     );
 
     // Step 5: Open the "Active Order Book" page to verify order placement

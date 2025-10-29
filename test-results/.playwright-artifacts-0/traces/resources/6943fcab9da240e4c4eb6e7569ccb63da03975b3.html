@@ -1,0 +1,92 @@
+<div id="clientInquiry" >
+	<div class="functionBar">
+		<div style="float: left;">
+			<table border="0" cellpadding="0" cellspacing="0" width="450px">
+				<tr>
+					<td id="clientInqrylblCdsAcc" style="width:20%;" atLangID="javascriptclientInquirylblCdsAcc">UCC</td>
+					<td width="5">:</td>
+					<td>	<select id="clientInqryCdsAcc" name="clientInqryCdsAcc" dojoType="dijit.form.ComboBox" style="width:240px"></select> </td>
+				</tr>
+				<tr>
+					<td colspan="3" height="5px"></td>
+				</tr>
+				<tr>
+					<td id="clientInqrylblAdvisor" style="width:20%;" atLangID="javascriptClientInquiryAdvisor">Advisor Code</td>
+					<td width="5">:</td>
+					<td>	<select id="clientInqryAdvisorCode" name="clientInqryAdvisorCode" dojoType="dijit.form.ComboBox" ></select> </td>
+				</tr>
+				<tr>
+					<td colspan="3" height="5px"></td>
+				</tr>
+				<tr>
+					<td id="clientInqrylblCustodial" style="width:20%;" atLangID="javascriptClientInquiryCustodial">Custodial</td>
+					<td width="5">:</td>
+					<td>	
+						<select id="clientInqryCustodial" name="clientInqryCustodial" dojoType="dijit.form.Select" style="width:60px">
+							<option value="ALL">ALL</option>
+							<option value="Yes">YES</option>
+							<option value="No">NO</option>
+						</select>
+					 </td>
+				</tr>
+			</table>
+		</div>
+		<table>
+			<tr>
+				<td id="clientInqrylblName" style="width:20%;" atLangID="javascriptClientInquiryName">Name</td>
+				<td width="5">:</td>
+				<td>	
+					<input id="clientInqryClientName" name="clientInqryClientName" dojoType="dijit.form.TextBox" style="width:240px"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" height="5px"></td>
+			</tr>
+			<tr>
+				<td id="clientInqrylblTel" style="width:20%;" atLangID="javascriptClientInquiryTel">Tel No</td>
+				<td width="5">:</td>
+				<td>	
+					<input id="clientInqryTel" name="clientInqryTel" dojoType="dijit.form.TextBox" />
+					<span id="clientInquiryRefreshCursor"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="right">
+					<button dojoType="dijit.form.Button"  class="clientInquirySearchBtn" type="submit" id="btnClientInquirySearch"><span atLangID="javascriptSearchBtnText">Search</span></button>
+					<button dojoType="dijit.form.Button"  class="clientInquirySearchBtn" type="button" id="btnClientInquiryClear"><span atLangID="javascriptClearBtnText">Clear</span></button>
+					<div dojoType="dijit.form.Button" id="printClientInquiry"></div>
+					<div dojoType="dijit.form.Button" id="saveClientInquiry"></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+    <div class="popupBody">
+		<div id="clientInquiryDatagrid" dojoType="dijit.layout.ContentPane"></div> 
+	</div>
+	<div class="popFooter">
+		<table>
+			<tr>
+				<td width="250">
+				</td>
+				<td>
+					<div class="inline">
+						<span id="clientInqryPreBtnContainer">
+							<button dojoType="dijit.form.Button" type="button" 	id="clientInqryBtnPreviousPage" atLangID="javascriptMarketTimeSalePrevButLbl">Previous</button></span>
+							<span id="clientInqryLblNavigation"  atLangID="javascriptClientInquiryNavigation">Go to:</span><input id ="clientInqrySpnPageNoBox" required="true"  name="spnPageNoBox" dojoType="dijit.form.NumberSpinner" style="width: 100px;" value= '1', constraints="{min:1}" /><span><span id="clientInqryLblOfText"  atLangID="javascriptMarketTimeSaleOfText">of</span><span id="clientInqryLblPageNo" >1</span><button
+							dojoType="dijit.form.Button" type="button" 	id="clientInqryBtnGo" atLangID="javascriptMarketTimeSaleGoButLbl">Go</button></span><span id="clientInqryNextBtnContainer"><button
+							dojoType="dijit.form.Button" type="button" 	id="clientInqryBtnNextPage" atLangID="javascriptMarketTimeSaleNextButLbl">Next</button>
+						</span>
+					</div>
+				</td>
+				<td width="195">
+				</td>
+				<td>
+					<div>
+						<button dojoType="dijit.form.Button" type="button"
+							 id="butclientInquiryClose">&nbsp;Close&nbsp;</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div> 

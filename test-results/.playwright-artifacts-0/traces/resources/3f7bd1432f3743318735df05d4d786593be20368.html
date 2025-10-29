@@ -1,0 +1,228 @@
+<div id="accountSummary">
+		<div class="functionBar accountSummaryFunctionBar">
+			<table border="0" cellpadding="0" cellspacing="0" width="95%">
+				<tr>
+					<td width="4%" align="left" valign="middle" id="lblAccSumaryCAccNo" atLangID="javascriptaccountStatementAccNo">A/C No</td>
+					<td width="1%" align="left" valign="middle">:</td>
+					<td width="55%" align="left" valign="middle">
+						<select id="accSumaryCdsAccntddl" name="accSumaryCdsAccntddl" dojoType="dijit.form.ComboBox" autoComplete="false" type="text" style="width:300px; "></select>
+					</td>
+					<td width="5%"><div dojoType="dijit.form.Button" id="printAccountSummary"></div></td>
+					<td colspan="3" align="left" valign="middle" width="5%">
+					
+    						 <div dojoType="dijit.form.Button" id="saveAccountSummary"></div>
+					</td>
+			      	</td>
+			    </tr>
+			    <tr>
+			    	<td height="5" colspan="7"></td>
+			    </tr>
+			    <tr>
+					<td align="left" valign="middle" id="lblAccSumaryName" atLangID="javascriptaccountStatementName">Name</td>
+					<td align="left" valign="middle">:</td>
+					<td colspan="5" align="left" valign="middle" id="txtAccSumaryName"></td>
+				</tr>
+			    <tr>
+			    	<td height="7" colspan="7"></td>
+			    </tr>
+				<tr height="25">
+					<td width="40" align="left" valign="middle" id="lblAccSumaryAddres" atLangID="javascriptaccountStatementAddress">Address</td>
+			      	<td width="5" align="left" valign="middle">:</td>
+			      	<td colspan="5" width="360" align="left" id="txtAccSumaryAddres"></td> 
+				 </tr>
+				 <tr height="25">
+					<td width="40" align="left" valign="middle" id="lblAccSumaryBOID" atLangID="javascriptaccountStatementBOID">BOID</td>
+			      	<td width="5" align="left" valign="middle">:</td>
+			      	<td colspan="5" width="360" align="left" id="txtAccSumaryBOID"></td> 
+				 </tr>
+				 <tr>
+					<td height="7" colspan="7" ></td>
+				 </tr> 	
+				 <tr colspan="7" >	
+				 	<table>
+				 		<tr>
+				 			<td width="100" align="left" valign="middle" id="lblAccSumaryAdvisor" atLangID="javascriptaccountStatementAdvisor">Investment Advisor</td>
+							<td width="5" align="left" valign="middle">:</td>
+							<td width="80" align="left" valign="middle" id="txtAccSumaryAdvisor" ></td>
+					      	<td width="20" align="left" valign="middle">&nbsp;</td>  
+					      	<td width="40" align="left" valign="middle" id="lblAccSumaryTel" atLangID="javascriptaccountStatementTelePhone">Telephone</td>
+					      	<td width="5" align="left" valign="middle">:</td>
+						  	<td width="100" align="left" valign="middle" id="txtAccSumaryTel"></td> 
+				 		</tr>
+				 	</table>
+				 </tr>
+				 <tr>
+					<td height="7" colspan="7" ></td>
+				 </tr>
+				 <tr>
+					<td height="3" colspan="7" align="left" valign="bottom"><hr /></td>
+				 </tr>
+				 <tr>
+					<td height="7" colspan="7" ></td>
+				 </tr>
+				 <tr>
+				 	<td colspan="7">
+				 	<div id="printAccoutns">
+				 		<table >
+				 			<tr>
+				 				<td width="250" align="left" valign="middle" id="lblAccSumaryTcostPortfolio" atLangID="javascriptTotalCostPortfolio">Total Cost of the Portfolio</td>
+						      	<td width="15" align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryTcostPortfolio"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryTMvaluePortfolio" atLangID="javascriptTotalMvaluePortfolio">Total Market Value of the Portfolio</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryTMvaluePortfolio"></td> 
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryTGainLoss" atLangID="javascriptTotalGainLoss">Total Gain/Loss</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryTGainLoss"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryCashBalance" atLangID="javascriptCashBalance">Account Balance</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryCashBalance"></td> 
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryBuyingPowr" atLangID="javascriptBuyingPowr">Buying Power</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryBuyingPowr"></td> 
+						      	<td>
+							 	</td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryTPendingBuyOrderVal" atLangID="javascriptTotalPendingBuyOrderVal">Total Pending Buy Orders Value</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryTPendingBuyOrderVal"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>							 
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryExposurePerecentage" atLangID="javascriptExposurePercentage">Exposure Percentage</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryExposurePerecentage"></td> 
+						      	<td>
+							 	</td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							  <tr>
+							 	<td align="left" valign="middle" id="lblUtilizedPortfolioMarginContVal" atLangID="javascriptUtilizedPortfolioMarginContVal">Utilized Portfolio Margin Contribution %</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtUtilizedPortfolioMarginContVal"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryMarginAmt" atLangID="javascriptMarginAmt">Margin Amount-Equity</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryMarginAmt"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryMarginAmtDebt" atLangID="javascriptMarginAmtDebt">Margin Amount-Debt</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryMarginAmtDebt"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryCashBlock" atLangID="javascriptCashBlock">Cash Block</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryCashBlock"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryMarginBlock" atLangID="javascriptMarginBlock">Margin Block</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryMarginBlock"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							 <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryPerOrderLimit" >Per Order Limit</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryPerOrderLimit"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							  <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryPerDayLimit" >Per Day Limit</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryPerDayLimit"></td>
+							 </tr>
+							 <tr>
+								<td height="7" colspan="3" ></td>
+							 </tr>
+							  <tr>
+							 	<td align="left" valign="middle" id="lblAccSumaryPerDayLimitR" >Per Day Limit Remaining</td>
+						      	<td align="left" valign="middle">:</td>
+						      	<td align="left" valign="middle" id="txtAccSumaryPerDayLimitR"></td>
+							 </tr>
+							 
+				 		</table></div>
+				 	</td>
+				 	
+				 <tr>
+					<td height="7" colspan="7" ></td>
+				 </tr>
+				 <tr>
+					<td colspan="7">
+						<table width="96%">
+							<tr>
+								<td align="right">
+									<button data-dojo-type="dijit.form.Button" id="butAccSumaryClose">Close</button>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="accountSummaryReportHeader" style="display: none;" >
+		        		<table width="40%" cellspacing='0'>
+		        			<tr>
+		        				<td width="25%">
+		        					<div id="accountSummaryReportHeaderframe"></div>
+		        				</td>
+		        				<td width="55%" align="center" rowspan="2">
+		        					<strong><font size="4">Account Summary</font></strong>
+		        				</td>
+		        				<td align="right">
+		        					<div id="accountSummaryBrokerLogo" align="center">
+		        						<img src="theme/html/white/atrad/images/logoForReports.png" width="100" height="28" style="margin-top:2px">
+		        					</div>
+		        					<div align="center">
+		        						<a href="http://www.atrad.lk"><font size="2">www.atrad.lk</font></a>
+		        					</div>
+		        				</td>
+		        			</tr>
+		        		</table>
+	        		</div>
+</div>

@@ -1,0 +1,724 @@
+
+<div id="_atrad_buyWatchPane" class="buy">
+	<div id="_atrad_functionBar" class="debtFunctionBar">
+
+
+
+		<!-- <div id="_atrad_expBuySellOrder" dojoType="dojox.layout.ExpandoPane" easeIn="dojo.fx.easing.bounceOut" duration="10" region="top" maxHeight="100" startExpanded="true">
+	 -->
+
+		<div dojoType="dijit.layout.ContentPane">
+			<table class="orderLastSet">
+				<tr>
+					<td style="width: 30%">
+						<div style="float: left; height: auto;" class="greenWindow textColor">
+							<div class="gridBg" id="_atrad_buySellBid"></div>
+							 <span width="50" align="left" class="textColor" id= _atrad_lblTotBid>Total Buys</span>
+    						 <span width="10" align="left">:</span>
+    						 <span width="90" align="left" class="textColor" id=_atrad_lblTotBidval></span>
+  
+						</div>
+					</td>
+					<td style="width: 30%">
+						<div style="float: left; height: auto" class="redWindow textColor">
+							<div class="gridBg2 textColor" id="_atrad_buySellAsk"></div>						
+							    <span width="55" align="left" id= _atrad_lblTotAsk  style="padding-top: 5px;">Total Sells</span>
+    							<span width="10" align="left" style="padding-top: 5px;" >:</span>
+   								<span width="90" align="left" id=_atrad_lblTotAskval style="padding-top: 5px;"></span>
+						</div>
+					</td>
+					
+					<td>
+					<strong><font class="stockStat textColor" size="2" style='font-weight:bold;'>&nbsp;  Stock Statistics</font></strong>
+
+						<div id="_atrad_tableStat" class="tableStatistics textColor">
+						
+							<table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+
+							
+								<tr>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="70" align="left"><div id="_atrad_lblHigh"
+														atLangID="javascriptBuyOrderHigh"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_highVal"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="80" align="left"><div id="_atrad_lblLow"
+														atLangID="javascriptBuyOrderLow"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_lowVal"></td>
+											</tr>
+										</table>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td height="5" colspan="5"></td>
+								</tr>
+
+								<tr>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="52" align="left"><div
+														id="_atrad_lblPreClose"
+														atLangID="javascriptBuyOrderPreClose"></div></td>
+												<td width="10" align="center">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_preCloseVal"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="90" align="left"><div
+														id="_atrad_lblOpenPrice"
+														atLangID="javascriptBuyOrderOpenPrice"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="80" align="left" class="fontBold"
+													id="_atrad_openPriceVal"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+
+								<tr>
+									<td height="5" colspan="5"></td>
+								</tr>
+
+								<tr>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="68" align="left"><div
+														id="_atrad_lblAvgPrice"
+														atLangID="javascriptBuyOrderAveragePrice"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_avgPriceVal"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="65" align="left"><div id="_atrad_lblLow">Trade</div>
+												</td>
+												<td width="10" align="left">:</td>
+												<td width="80" align="left" class="fontBold"
+													id="_atrad_noOfTradesVal"></td>
+											</tr>
+										</table>
+									</td>
+
+								</tr>
+								<tr>
+									<td height="5" colspan="5"></td>
+								</tr>
+
+								<tr>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="55" align="left"><div
+														id="_atrad_lblTotVolume"
+														atLangID="javascriptBuyOrderTotVolume"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_totVolumeVal"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="60" align="left"><div
+														id="_atrad_lblTotTurnover"
+														atLangID="javascriptBuyOrderTotTurnover"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="80" align="left" id="_atrad_totTurnoverVal"
+													class="fontBold"></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td height="5" colspan="5"></td>
+								</tr>
+
+								<tr>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="58" align="left"><div
+														id="_atrad_lblPreOpenDPRHigh" atLangID="javascript52WHigh"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_52WHighVal"></td>
+											</tr>
+										</table>
+									</td>
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="63" align="left"><div
+														id="_atrad_lblPreOpenDPRLow" atLangID="javascript52WLow">
+													</div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_52WLowVal"></td>
+											</tr>
+										</table>
+									</td>
+
+
+								</tr>
+
+								<tr>
+									<td height="5" colspan="5"></td>
+								</tr>
+
+								<tr>
+
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="58" align="left"><div id="_atrad_lblHighDPR"
+														atLangID="javascriptHighDPR"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" class="fontBold"
+													id="_atrad_highDPRVal"></td>
+											</tr>
+										</table>
+									</td>
+
+									<td width="50%">
+										<table border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td width="63" align="left"><div id="_atrad_lblLowDPR"
+														atLangID="javascriptLowDPR"></div></td>
+												<td width="10" align="left">:</td>
+												<td width="70" align="left" id="_atrad_lowDPRVal"
+													class="fontBold"></td>
+											</tr>
+										</table>
+									</td>
+
+
+
+
+
+
+								</tr>
+
+
+
+
+							</table>
+						</div>
+					</td>
+
+				</tr>
+			</table>
+
+
+		</div>
+
+		<!--  </div>  -->
+
+
+
+	</div>
+
+	<div id=_atrad_popupBody class="debtPopupBody">
+		<div dojoType="dijit.form.Form" id="_atrad_orderForm" name="orderForm"
+			action="order" jsId="_atrad_orderForm" encType="multipart/form-data">
+			<input type="hidden" id="_atrad_action" name="action"
+				value="submitOrder" /> <input type="hidden" id="_atrad_market"
+				name="market" value="" /> <input type="hidden" id="_atrad_broker"
+				name="broker" value="" /> <input type="hidden" id="_atrad_format"
+				name="format" value="" /> <input type="hidden"
+				id="_atrad_clientOrderId" name="clientOrderId" value="" /> <input
+				type="hidden" id="_atrad_cseOrderId" name="cseOrderId" value="" />
+			<input type="hidden" id="_atrad_brokerClient" name="brokerClient"
+				value="" /> <input type="hidden" id="_atrad_orderStatus"
+				name="orderStatus" value="" /> <input type="hidden"
+				id="_atrad_filledQty" name="filledQty" value="" /> <input
+				type="hidden" id="_atrad_clientacntid" name="acntid" value="" /> <input
+				type="hidden" id="_atrad_oldPrice" name="oldPrice" value="" /> <input
+				type="hidden" id="_atrad_oldQty" name="oldQty" value="" /> <input
+				type="hidden" id="_atrad_remainder" name="remainder" value="" /> <input
+				type="hidden" id="_atrad_odrplacedate" name="orderplacedate"
+				value="" /> <input type="hidden" id="_atrad_marketPrice"
+				name="marketPrice" value="" /> <input type="hidden"
+				id="_atrad_oldDisclose" name="oldDisclose" value="" /> <input
+				type="hidden" id="_atrad_txtContraBroker" name="txtContraBroker"
+				value="" /> <input type="hidden" id="_atrad_txtapprovalReason"
+				name="txtapprovalReason" value="" /> <input type="hidden"
+				id="_atrad_txtsenttoapproval" name="txtsenttoapproval" value="no" />
+			<input type="hidden" id="_atrad_txtCompId" name="txtCompId" value="" />
+			<input type="hidden" id="_atrad_txtOdrStatus" name="txtOdrStatus"
+				value="" /> <input type="hidden" id="_atrad_duplicateOrderId"
+				name="duplicateOrderId" value="" /> <input type="hidden"
+				id="_atrad_product" name="product" value="web" />
+			<div id="_atrad_clearfirst" class="clear"></div>
+			<div class="tableBorder textColor">
+				<table>
+					<tr>
+						<td width="30px" align="left" id="_atrad_lblClientAcc"
+							atLangID="javascriptBuyOrderClientAccoutnt"></td>
+						<td align="left">:</td>
+						<td align="left"><select class="textColor" id="_atrad_cmbClientAcc"
+							name="clientAcc" dojoType="dijit.form.ComboBox"
+							autoComplete="false" style="width: 240px">
+						</select></td>
+						<!--  		<td width="10px" align="left"></td>       		
+       		<td width="20px" align="left" id="_atrad_lblLTP" atLangID="javascriptOrderWindowLTP"></td>
+      		<td align="left" id="_atrad_lblLTPSem">:</td>
+      		<td width="60px" align="left" id="_atrad_LTPVal" class="fontBold"></td>
+      		<td width="20px" align="left" id="_atrad_lblLTPHigh" atLangID="javascriptOrderWindowHigh"></td>
+      		<td align="left" id="_atrad_lblLTPHighSem">:</td>
+      		<td width="60px" align="left" id="_atrad_LTPHighVal" class="fontBold"></td>
+      		<td width="20px" align="left" id="_atrad_lblLTPLow" atLangID="javascriptOrderWindowLow"></td>
+      		<td align="left" id="_atrad_lblLTPLowSem">:</td>
+      		<td width="60px" align="left" id="_atrad_LTPLowVal" class="fontBold"></td>      -->
+						<td width="10px" align="left"></td>
+						<td width="60px" align="left" id="_atrad_lblClientName"
+							atLangID="javascriptBuyOrderClientName"></td>
+						<td width="5" align="left">:</td>
+						<td width="250px" height="15" align="left" class="fontBold"
+							id="_atrad_clientNameVal" name="clientName"
+							style="height: 30px; overflow: hidden;"><span></span></td>
+					</tr>
+				</table>
+			</div>
+			<div id="_atrad_clearfirst" class="clear"></div>
+			<div id="_atrad_tableBuy"
+				style="float: left; width: auto; margin-right: 5px"
+				class="tableDebtBuyBorder textColor">
+
+				<table border="0" cellspacing="0">
+					<!-- <tr><td><div id="_atrad_error" name="messagePanel"></div></td></tr> -->
+					<tr>
+						<td align="left" id="_atrad_lblAction"
+							atLangID="javascriptBuyOrderAssert"></td>
+						<td align="left" id="_atrad_lblAction"
+							atLangID="javascriptBuyOrderAction"></td>
+						<td align="left" id="_atrad_lblSecurity"
+							atLangID="javascriptBuyOrderSecurityId"></td>
+						<td align="left" id="_atrad_lblTypeOfOrder"
+							atLangID="javascriptTypeOfOrder"></td>
+
+					</tr>
+
+					<tr>
+
+						<td align="left"><select id="_atrad_cmbAssetSelect"
+							name="assetSelect" dojoType="dijit.form.Select"
+							style="width: 70px !important;" class="BS_ISO textColor">
+								<option value="1">EQUITY</option>
+								<option value="4">MF</option>
+								<option value="5">NCD</option>
+						</select></td>
+
+
+						<td align="left"><select id="_atrad_cmbActionSelect"
+							name="actionSelect" dojoType="dijit.form.Select" type="text"
+							style="width: 70px !important;" class="BS_ISO textColor">
+								<option value="1">BUY</option>
+								<option value="2">SELL</option>
+						</select></td>
+
+
+						<td align="left"><input id="_atrad_txtSecurity"
+							name="txtSecurity" dojoType="dijit.form.ComboBox" trim="true"
+							required="true" invalidMessage="Invalid security code."
+							class="BS_ISO textColor" uppercase="true" autoComplete="false"
+							style="width: 70px !important;"></input></td>
+
+						<td align="left"><select id="_atrad_cmbTypeOfOrder"
+							name="cmbTypeOfOrder" autoWidth="false" class="BS_ISO textColor"
+							dojoType="dijit.form.Select" style="width: 82px !important;"></select>
+						</td>
+
+
+					</tr>
+					<tr height="5px">
+					</tr>
+
+					<tr>
+						<td align="left" id="_atrad_lblQuantity"
+							atLangID="javascriptBuyOrderQuantity"></td>
+						<td align="left" id="_atrad_lblPrice"
+							atLangID="javascriptBuyOrderPrice"></td>
+						<td width="" align="left" id="_atrad_lblMinQty"
+							atLangID="javascriptBuyOrderMinQuantity" style="visibility: hidden;"></td>
+						<td align="left" id="_atrad_lblDiclose"
+							atLangID="javascriptBuyOrderDiscloseQuantity" style="visibility: hidden;"></td>
+					</tr>
+
+					<tr>
+						<td align="left"><input id="_atrad_spnQuantity"
+							required="true" name="spnQuantity"
+							dojoType="dijit.form.NumberSpinner" class="BS_ISO textColor" value='0'
+							, constraints="{min:0,places:0}" style="width: 70px !important;" /></td>
+
+						<td align="left"><input id="_atrad_spnPrice" name="spnPrice"
+							required="true" dojoType="dijit.form.CSEPriceSpinner"
+							class="BS_ISO textColor" value='0'
+							, constraints="{min:0.0000,pattern: '#######.####'}"
+							style="width: 70px !important;" /></td>
+
+						<td align="left"><input id="_atrad_spnMinFillQuantity"
+							required="true" name="spnMinFillQuantity"
+							dojoType="dijit.form.NumberSpinner" class="BS_ISO textColor" value='0'
+							, constraints="{min:0,places:0}" style="width: 70px !important;visibility: hidden;" />
+						</td>
+
+						<td align="left"><input id="_atrad_spnDisclose"
+							name="spnDisclose" required="true"
+							dojoType="dijit.form.NumberSpinner" class="BS_ISO textColor" value='0'
+							, constraints="{min:0,places:0}" style="width: 70px !important;visibility: hidden;" /></td>
+
+					</tr>
+					<tr height="5px">
+					</tr>
+
+					<tr>
+						<td align="left" id="_atrad_lblOrderType"
+							atLangID="javascriptBuyOrderOrderType"></td>
+						<td align="left" id="_atrad_lblTifDays"
+							atLangID="javascriptBuyOrderTIFDays"></td>
+						<td align="left" id="_atrad_lblStopPrice" style="visibility: hidden;">Stop Price</td>
+						<td align="left" id="_atrad_lblBoard"
+							atLangID="javascriptBuyOrderBoard" style="visibility: hidden;"></td>
+
+					</tr>
+
+					<tr>
+						<td align="left"><select id="_atrad_cmbTif" name="cmbTif"
+							class="BS_ISO textColor" dojoType="dijit.form.Select"
+							style="width: 70px !important;">
+						</select></td>
+
+						<td align="left"><select id="_atrad_cmbTifDays"
+							name="cmbTifDays" class="BS_ISO textColor" dojoType="dijit.form.Select"
+							style="width: 70px !important;"></select></td>
+
+						<td align="left" style="visibility:hidden;" id="_atrad_stopPrice"><input id="_atrad_spnStopPrice"
+							name="spnStopPrice" required="true"
+							dojoType="dijit.form.NumberSpinner" class="BS_ISO textColor" value='0'
+							, constraints="{min:0.00,pattern: '#######.##'}"
+							style="width: 70px !important; " smallDelta="0.10" /></td>
+
+						<td align="left" style="visibility: hidden;"><select
+							id="_atrad_cmbBoard" name="cmbBoard" class="BS_ISO textColor"
+							dojoType="dijit.form.Select" style="width: 70px !important;"></select>
+						</td>
+
+					</tr>
+					<tr height="5px">
+					</tr>
+
+
+					<tr id="_atrad_traderId" style="visibility: hidden;">
+						<td align="left" id="_atrad_lblContraBroker" colspan="4">Counter
+							Broker ID</td>
+
+						<!--<td align="left" id="_atrad_lblYield" atLangID="javascriptBuyYeild"></td>
+	    	-->
+						<!--<td align="left" id="_atrad_lblEffectiveYield" atLangID="javascriptBuyEffectiveYield"></td>-->
+						<input type="hidden" id="_atrad_hiddenSpnCseFee"
+							name="hiddenSpnCseFee">
+
+					</tr>
+
+					<!--input	id="_atrad_txtSecurity" name="txtSecurity" 
+							dojoType="dijit.form.ComboBox"  trim="true"  
+       	required="true" invalidMessage="Invalid security code."  class="BS_ISO" uppercase="true" autoComplete="false" style="width:70px !important;"></input-->
+
+					<!-- 
+    <tr id="_atrad_contraBroker" style="visibility:hidden;">
+	     <td align="left" colspan="4">
+	     	  <input id="_atrad_txtContraBroker_" name="txtContraBroker_" class="BS_ISO" style="width:300px !important;" maxHeight="350">  
+	     </td>	    
+    </tr> 
+     -->
+
+					<tr id="_atrad_contraBroker" style="visibility: hidden;">
+						<td align="left" colspan="4"><input
+							id="_atrad_txtContraBroker_" name="txtContraBroker_"
+							dojoType="dijit.form.FilteringSelect" class="BS_ISO textColor"
+							style="width: 300px !important;" maxHeight="350"></td>
+					</tr>
+
+					<tr height="15px">
+					</tr>
+				</table>
+				<table border="0" cellspacing="0">
+					<tr class="textColor">
+
+						<td width="10px" align="left"></td>
+						<td width="20px" align="left" id="_atrad_lblLTP"
+							atLangID="javascriptOrderWindowLTP"></td>
+						<td align="left" id="_atrad_lblLTPSem">:</td>
+						<td width="60px" align="left" id="_atrad_LTPVal" class="fontBold"></td>
+						
+			
+						
+						<td width="20px" align="left" id="_atrad_lblLTPHigh"
+							atLangID="javascriptOrderWindowHigh"></td>
+						<td align="left" id="_atrad_lblLTPHighSem">:</td>
+						<td width="60px" align="left" id="_atrad_LTPHighVal"
+							class="fontBold"></td>
+						<td width="20px" align="left" id="_atrad_lblLTPLow"
+							atLangID="javascriptOrderWindowLow"></td>
+						<td align="left" id="_atrad_lblLTPLowSem">:</td>
+						<td width="60px" align="left" id="_atrad_LTPLowVal"
+							class="fontBold"></td>
+					</tr>
+
+					<tr height="8px">
+					</tr>
+					
+					<tr>
+					<table border="0" cellspacing="0" cellpadding="0">
+						<td width="10px" align="left"></td>
+						<td width="60px" align="left"><div id="_atrad_lblNetChange" atLangID="javascriptBuyOrderNetChnage"></div></td>
+	          			<td  align="left">:</td>
+	          			<td width="10px" align="left"></td>
+	          			<td width="40px" align="left" class="fontBold" id="_atrad_netChangeVal"> </td>
+	          			<td width="5px" align="left"></td>
+	          			<td width="50px" align="left" class="fontBold" id="_atrad_netChangePercentage"> </td>
+	          			<tr height="8px">
+	          			</table>
+					</tr>
+	          			
+					</tr>
+					
+					
+
+					<tr>
+						<table border="0" cellspacing="0" cellpadding="0" style="visibility: hidden;">
+							<td align="left" width="30%" id="_atrad_lblBrokerClient"
+								atLangID="javascriptBuyOrderBrokerClient"></td>
+							<td width="5" align="left">:</td>
+							<td height="22" align="left"><select
+								id="_atrad_brokerClientVal" name="brokerClientVal"
+								class="BS_ISO" dojoType="dijit.form.Select"
+								style="width: 100px !important;"></select></td>
+						</table>
+					</tr>
+
+					
+
+					<tr>
+
+						<td height="22" colspan="5" align="left">
+							<table border="0" align="right" cellpadding="0" cellspacing="0">
+							
+							<tr height="15px">
+					</tr>
+
+								
+							</table>
+						</td>
+
+					</tr>
+
+				</table>
+
+			</div>
+
+
+			<div class="debtBuyingPowerTableBorder textColor">
+
+				<table border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<!--  		<td align="left" width="30%" id="_atrad_lblBrokerClient"
+							atLangID="javascriptBuyOrderBrokerClient"></td>
+						<td width="5" align="left">:</td>
+						<td height="22" align="left"><select
+							id="_atrad_brokerClientVal" name="brokerClientVal" class="BS_ISO"
+							dojoType="dijit.form.Select" style="width: 100px !important;"></select>
+						</td>   -->
+					</tr>
+					<tr>
+						<!--      <td align="left"   id="_atrad_lblClientName" atLangID="javascriptBuyOrderClientName"></td>
+        <td width="5" align="left">:</td>
+        <td  height="15" align="left" class="fontBold" id="_atrad_clientNameVal" name="clientName"  style="display: block;height: 30px;overflow: hidden;">
+        <span></span>
+        </td>    -->
+					</tr>
+				</table>
+
+				<table>
+
+					<tr>
+						<td height="95" colspan="5" align="left"
+							class="buyPowerTableFormat">
+							<table border="0" align="center" cellpadding="0" cellspacing="0">
+								<tr>
+									<td width="40%" height="15" align="left"
+										id="_atrad_lblBuyPower" style="padding-left: 5px;"></td>
+									<td width="10" align="left">:</td>
+									<td width="400" class="fontBold" align="left"
+										id="_atrad_buyPowerVal"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td height="15" align="left" id="_atrad_lblOriginalQty"
+										atLangID="javascriptRemainigShares" style="padding-left: 5px;"></td>
+									<td width="10" align="left">:</td>
+									<td width="400" class="fontBold" align="left"
+										id="_atrad_OriginalQtyVal"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td height="15" align="left" id="_atrad_lblPendingQty"
+										style="padding-left: 5px;"></td>
+									<td width="10" align="left">:</td>
+									<td width="400" class="fontBold" align="left"
+										id="_atrad_PendingQtyVal"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td style="padding-left: 5px;" height="15" align="left"
+										id="_atrad_lblOrder" atLangID="javascriptBuyOrderOrderValue"></td>
+									<td align="left">:</td>
+									<td align="left" class="fontBold" id="_atrad_orderVal"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td style="padding-left: 5px;" height="15" align="left"
+										id="_atrad_lblOrderStatus" atLangID="javascriptCommission"></td>
+									<td align="left">:</td>
+									<td align="left" class="fontBold" id="_atrad_ordercommission"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td style="padding-left: 5px;" height="15" align="left"
+										id="_atrad_lblOrderStatus" atLangID="javascriptNetValue"></td>
+									<td align="left">:</td>
+									<td align="left" class="fontBold" id="_atrad_ordernetvalue"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td style="padding-left: 5px;" height="15" align="left"
+										id="_atrad_lblOrderSession"
+										atLangID="javascriptBuyOrderOrderSession"></td>
+									<td align="left">:</td>
+									<td align="left" class="fontBold" id="_atrad_ordersesssion"></td>
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<!--      <td  style="padding-left: 5px;"height="15" align="left" id="_atrad_lblOrderMarket" atLangID="javascriptBuyOrderOrderMarket"></td>
+            <td align="left">:</td>
+            <td align="left" class="fontBold"  id="_atrad_ordermarket"></td>   -->
+								</tr>
+								<tr>
+									<td height="3" colspan="3" align="left"></td>
+								</tr>
+								<tr>
+									<td style="padding-left: 5px;" height="15" align="left"
+										id="_atrad_lblOrderStatus"
+										atLangID="javascriptBuyOrderOrderMarketStatus"></td>
+									<td align="left">:</td>
+									<td align="left" class="fontBold" id="_atrad_orderstatus"></td>
+								</tr>
+							</table>
+
+						</td>
+					</tr>
+					<tr>
+				  		<td height="22" colspan="5" align="left">
+							<table border="0" align="right" cellpadding="0" cellspacing="0">
+								<tr>
+									<span 
+										atLangID="javascriptBuyOrderDisclaimer"></span>
+								</tr>
+								<tr height="30px"></tr>
+								<tr>
+								    <td>
+										<div dojoType="dijit.form.Button" id="_atrad_showOrderBlotter">
+											<img src="theme/html/blue/claro/images/OrderBlotter.png"
+												title="Order Blotter" width="15px" height="15px" />
+										</div>
+									</td>
+									<td>
+										<div dojoType="dijit.form.Button" id="_atrad_showOrderBasket" disabled="true">
+											<img src="theme/html/blue/claro/images/basket_icon.png"
+												title="Add to Basket" width="15px" height="15px" />
+										</div>
+									</td>
+									<td>
+										<div dojoType="dijit.form.Button" id="_atrad_showMrktDepth">
+											<img src="theme/html/blue/claro/images/order_book_icon.png"
+												title="Market Depth" width="15px" height="15px" />
+										</div>
+									</td>
+									<td>&nbsp;&nbsp;</td>
+									
+									<td><input id="_atrad_chkConfirm" name="confirm"
+										dojoType="dijit.form.CheckBox" value="1"checked/"> <label
+										for="check3"></label></td>
+									<td>&nbsp;</td>
+									<td id="_atrad_lblConfirm" atLangID="javascriptBuyOrderConfirm"></td>
+									<td>&nbsp;</td>
+									
+									<td><button id="_atrad_btnSubmit" name="submit"
+											dojoType="dijit.form.Button" type="submit"
+											atLangID="javascriptBuyOrderSubmit" class="buysellbutton">Submit</button></td>
+									<td>&nbsp;</td>
+									<td><button id="_atrad_btnClose" name="close"
+											dojoType="dijit.form.Button" type="button"
+											atLangID="javascriptBuyOrderClose">Close</button></td>
+								</tr>  
+							</table>
+						</td> 
+					</tr>
+				</table>
+
+
+			</div>
+		</div>
+
+
+
+		<div class="tableBorder">
+			<table>
+				<tr>
+					<td><div id="_atrad_error" name="messagePanel"></div></td>
+				</tr>
+			</table>
+		</div>
+		<div id="_atrad_clearLast" class="clear"></div>
+	</div>
+</div>
+

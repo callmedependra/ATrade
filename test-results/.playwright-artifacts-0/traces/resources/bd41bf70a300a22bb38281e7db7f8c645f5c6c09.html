@@ -1,0 +1,190 @@
+<div id="alerts">
+	<div dojoType="dijit.form.Form" id="alertForm" jsId="alertForm"	name="alertForm" action="alert" encType="multipart/form-data"
+				method="post" onSubmit="return false">
+		 <input type="hidden" id="action" name="action" value="saveAlerts" />
+		 <input type="hidden" id="format" name="format" value="json">
+		  <input type="hidden" id="alrtType" name="alrtType" value=""/>
+		 <input type="hidden" id="alrtSecurity" name="security" value=""/>
+		 <input type="hidden" id="alrtPrmtr" name="parameter" value=""/>
+		 <input type="hidden" id="alrtCriteria" name="criteria" value=""/>
+		 <input type="hidden" id="alrtValue" name="value" value=""/>
+		 <input type="hidden" id="alrtOprtn" name="operation" value=""/>
+		 <input type="hidden" id="alrtExprDt" name="expDate" value=""/>
+		 <input type="hidden" id="alrtExprTime" name="expTime" value=""/>
+		 <input type="hidden" id="alrtMessage" name="message" value=""/>
+		 <input type="hidden" id="alrtPopup" name="alrtPopup" value=""/>
+		 <input type="hidden" id="alrtSms" name="alrtSms" value=""/>
+		 <input type="hidden" id="alrtEmail" name="alrtEmail" value=""/>
+		 <input type="hidden" id="alrtNotify" name="notify" value=""/>
+		 <input type="hidden" id="alrtCriteriaValueList" name="alrtCriteriaValueList" value="">
+		 
+		<div class = "functionBar">
+			
+				<table>
+					<tr>
+							<td width="55px" height="22" align="left" valign="middle" id="lblAlertName">Alert Name</td>
+							<td width="5px" align="left" valign="middle">:</td>
+							<td width="110"><input id="alertNameString" name="alertName" dojoType="dijit.form.ValidationTextBox" ></td>
+							<td ></td>
+							<td align="left" valign="middle" class="boldText">Security</td>
+							<td width="5px" align="left" valign="middle">:</td>
+							<td valign="middle" colspan="9"><input type="text" name="txtsecurityListAlerts" value=""  trim="true" id="txtsecurityListAlerts" propercase="true" style="width:500px"></td>
+							
+						</tr>
+						<tr>
+							<td width="55px"  height="22" align="left" valign="middle" id="alertMode">Alert Mode</td>
+							<td width="5px" align="left" valign="middle">:</td>	 
+							<td>
+								<table>
+									<tr>
+										<td>
+											<input id="alertModepopup" name="alertPopup" dojoType="dijit.form.CheckBox" checked="checked">
+										</td>
+										<td width="45" height="22" align="left" valign="middle" id="alertPopup">Popup</td>	 		
+										<td>
+											<input id="alertModSms" name="alertSms" dojoType="dijit.form.CheckBox" disabled='disabled' >
+										</td>
+										<td width="40" height="22" align="left" valign="middle" id="alertSms">SMS</td>	 		
+										<td>
+											<input id="alertModeEmail" name="alertEmail" dojoType="dijit.form.CheckBox" disabled='disabled'>
+										</td>
+										<td width="45" height="22" align="left" valign="middle" id="alertEmail">EMail</td>
+									</tr>
+								</table>
+							</td>	
+							<td ></td>
+		
+							
+							<td  height="22" align="left" valign="middle">Validity Period</td>
+							<td  align="left" valign="middle">:</td>
+							<td>	 			
+								<select id="alertValidity" name="alertValidity" dojoType="dijit.form.Select" style="width:70px" type="text">
+									<option value="1">1 Day</option>
+									<option value="2">2 Days</option>
+									<option value="3">3 Days</option>
+								</select>
+							</td>
+							
+						</tr>
+						<tr>	 	 
+							<td  align="left" valign="middle" class="boldText">Operation</td>
+							<td  align="left" valign="middle">:</td>
+							<td align="left" valign="middle">
+								<select id="alertOperation" name="alertOperation" dojoType="dijit.form.Select" style="style:70px" type="text">
+									<option value="matchAll">Match all Conditions</option>
+									<option value="matchAny">Match any Condition</option>
+								</select>
+							</td>
+							<td ></td>
+							<td  height="22" align="left" valign="middle">Notify </td>
+							<td>:</td>
+							<td>
+								<select id="alertNotify" name="alertNotify" dojoType="dijit.form.Select" style="width:70px" type="text">
+									<option value="onceOnly">Once Only</option>
+									<option value="onceAday">Once a Day</option>
+								</select>
+							</td>	
+						</tr>
+						<tr>
+						
+						<td  height="22" align="left" valign="middle" id="alertMessage">Message</td>
+							<td align="left" valign="middle">:</td>
+							<td  colspan="5"><input id="alertMessageString" name="alertMssg" style="width: 350px" dojoType="dijit.form.ValidationTextBox" ></td>	
+						<td  colspan="8"></td>
+						</tr>
+				</table>
+			
+		</div>
+		<div class ="popupBody">
+			<div dojoType="dijit.layout.TabContainer" style="width:100%;height:280px;" id="setAlertTb">
+				<div dojoType="dijit.layout.ContentPane" title="PRICE" selected="true" style="width:100%;" class="statTab" id="priceTab">
+					<div style="padding: 0px 2px 5px 5px;">
+					<table border="0" cellspacing="0" cellpadding="0" class="bluetext" width="100%">
+						<tr>
+							<td colspan="7" height="7px">
+							
+							</td>
+						</tr>
+						
+						<tr>	 	 
+							<td  align="left" valign="middle" id="alertParameter">Parameter</td>
+							<td  align="left" valign="middle">:</td>
+							<td  align="left" valign="middle">
+								<select id="paramSelect" dojoType="dijit.form.Select" style="width:70px" type="text">
+								  <option value="Bid">Bid</option>
+								  <option value="Ask">Ask</option>
+								  <option value="Last">Last</option>
+								  <option value="LastQty">Last Qty</option>
+								  <option value="AskQty">Ask Qty</option>
+								  <option value="BidQty">Bid Qty</option>
+								  <option value="TotVolume">Total Volume</option>
+								  <option value="Change">% Change</option>
+								</select>
+							</td>
+							<td ></td>
+							<td  align="left" valign="middle" id="alertCriteria">Criteria</td>
+							<td  align="left" valign="middle">:</td>
+							<td  align="left" valign="middle">
+								<select id="criteriaSelect" dojoType="dijit.form.Select" style="width:100px" type="text">
+								  <option value="GT">Greater Than</option>
+								  <option value="LT">Less Than</option>
+								  <option value="E">Equal</option>
+								</select>
+							</td>
+							<td ></td>
+							<td width="35px" align="left" valign="middle" id="alertValue">Value </td>
+							<td>:</td>
+							<td align="left" valign="middle">
+								<input type="text" name="alertValue" id="alertValueId" style="width: 95px" dojoType="dijit.form.ValidationTextBox"  > 
+								<button type ="button" dojoType="dijit.form.Button" id="btnAddParameter">Add</button>
+							</td> 	
+						</tr>
+					</table>
+					</div>
+					 <div >
+						<div id = "dataGrid" dojoType = "dijit.layout.ContentPane" class = "alertGridContainer"></div>
+					</div>	
+				</div>
+				<div dojoType="dijit.layout.ContentPane" title="NEWS" selected="true" style="width:100%;" class="statTab"  id="newsTab">
+					<div style="padding: 0px 2px 5px 5px;" >
+					<table border="0" cellspacing="0" cellpadding="0" class="bluetext" width="100%">
+						<tr>
+							<td colspan="7" height="7px">
+							
+							</td>
+						</tr>
+						<tr>
+							<td align="left" valign="middle" class="boldText">Key Word</td>
+							<td  align="left" valign="middle">:</td>
+							<td align="left" valign="middle" colspan="12">
+								<input id="alertKeyword" name="alertKeyword" style="width: 250px" dojoType="dijit.form.ValidationTextBox" >
+								<span id='keywordMsg' style="font-size: 10px;display: block;color: #c1a023;"><strong>add keywords with a hash tag (eg: #keyword)</strong></span>
+							</td>
+							<td align="left" valign="middle">
+								<button type ="button" dojoType="dijit.form.Button" id="btnAddKeyword">Add</button>
+							</td> 	
+						</tr>
+					</table>
+					</div>
+					 <div >
+						<div id = "dataGridNews" dojoType = "dijit.layout.ContentPane" class = "alertGridContainer"></div>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<div class = "popFooter">
+			
+						<div class="setAlertPopFooter"  style="float: left;text-align: left">
+							<span id="setAlertMessageBox"></span>&nbsp;
+						</div>
+				
+						<div style="float:right">
+							<button type ="submit" dojoType="dijit.form.Button" id="btnSetAlert">Set Alert</button>
+							<button type="button" dojoType="dijit.form.Button" id="btnSetClear">Clear</button>
+							<button type ="button" data-dojo-type="dijit.form.Button" id="bCloseButAlert" >Close</button>
+						</div>
+					
+			
+		</div>
+	</div>
+</div>

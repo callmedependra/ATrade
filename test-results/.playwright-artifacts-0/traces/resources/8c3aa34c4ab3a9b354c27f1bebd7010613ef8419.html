@@ -1,0 +1,53 @@
+
+<div id="shortPositions">
+	<div class="functionBar">
+	   <div dojoType="dijit.form.Form" id="shortPositionsForm" name="shortPositionsForm" action="client" jsId="shortPositionsForm" encType="multipart/form-data" onSubmit="return false;">
+	  		<input type="hidden" id="_atrad_action" name="action" value ="getShortSellReport"/>
+	    	<input type="hidden" id="shortPositions_exchange" name="exchange" value =""/>
+	    	<input type="hidden" id ="shortPositions_broker" name="broker" value =""/>
+	    	<input type="hidden" id ="shortPositions_format" name="format" value =""/>  	
+	  		<table width="98%" border="0" cellpadding="0" cellspacing="0" class="blueText">
+	  		  <tr>
+	    		  <td width="10%" align="left" valign="middle"><div id="lbstockHoldingAccount" atLangID="javascriptStockHoldingAccNo"></div></td>
+	    		  <td width="1%" align="left" valign="middle" style="padding: 5px;">:</td>
+	     		  <td width="10%" align="left" valign="middle">
+		     		  <select id="shortPositionsClientAccount" name="txtClient" dojoType="dijit.form.ComboBox" autoComplete="false" style="width:200px; " >           		
+		       		  </select>
+	       		  </td>
+	    		  <td width="2%" align="left" valign="middle">&nbsp;</td>
+	    		  <td width="10%" align="left" valign="middle"><div id="lbstockHoldingSecurity" atLangID="javascriptStockHoldingSecurity"></div></td>
+	    		  <td width="1%" align="left" valign="middle" style="padding: 5px;">:</td>
+	     		  <td width="10%" align="left" valign="middle">
+		     		  <select id="shortPositionsSecurity" name="txtSecurityId" dojoType="dijit.form.ComboBox" autoComplete="false" style="width:100px; " >           		
+		       		  </select>
+	       		  </td>
+	              <td width="2%"></td>
+	              <td align="right" width="20%">              
+		              <button data-dojo-type="dijit.form.Button" id="shortPositionsRefreshbtn" >Refresh</button>
+		              <div dojoType="dijit.form.Button" id="printShortPostions" title="Print"></div>
+		              <div dojoType="dijit.form.Button" id="saveShortPostions" title="Save"></div>	              
+	              </td>
+	          </tr>
+	   	 	</table>  
+		</div>
+	</div>
+	
+	<div class="popupBody">
+		<div class="gridBg">
+		    <div id="shortPositionsDataGrid" style="width:690px;height:310px" dojoType="dijit.layout.ContentPane"></div>
+		</div>
+		<div class="popFooter">			
+			<table width="90%">
+				<tr>
+					<td width="80%">
+						<div class="blueText" style="float:left" id="shortPositionsRefreshbtn" atLangID="javascriptBlotterLstRefreshTime" >Last Refresh Time: </div><div id="bLstStockRefreshTime" class="blueText" style="float:left"></div>
+					</td>
+					<td width="5%" align="right">
+						<button dojoType="dijit.form.Button" name ="close" id="btnShortPositionsClose"  atLangID="javascriptStockHoldingcloseBtn">
+						Close</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

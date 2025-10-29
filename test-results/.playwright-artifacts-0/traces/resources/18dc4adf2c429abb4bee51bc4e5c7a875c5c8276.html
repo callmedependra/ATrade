@@ -1,0 +1,119 @@
+<div id="mrktIndexSummary">
+	<div class="functionBar mrktIndexSummaryfunctionBar">
+   		<table width="100%">
+	        <tr>
+	            <td width="4%"><label for="name">Date</label></td>
+	            <td width="16%">: <input dojoType="dijit.form.DateTextBox" name="name" id="mrktIndexSummaryDate" value="now" constraints="{selector : 'date',datePattern:'MM/dd/yyyy'}"></td>
+	            <td width="80%">
+					<button
+						dojoType="dijit.form.Button" type="button" 
+						id="mrktIndexSumaryClearBut">Clear</button>
+					<button
+					dojoType="dijit.form.Button" type="button" 
+					id="mrktIndexSumarySearchBut">Search</button>
+					<div dojoType="dijit.form.Button" id="printMrktIndexSumary"></div>
+					<div dojoType="dijit.form.Button" id="saveMrktIndexSumary"></div>
+					
+				</td>
+			</tr>
+	        <tr>
+	        	<td colspan="3" id="indexSummaryLblCompany">
+        			<hr size="1px"></hr>
+        			<div id="indexSummaryReportHeader" >
+		        		<table width="100%" cellspacing='0'>
+		        			<tr>
+		        				<td width="25%">
+		        					<div id="indexSummaryReportHeaderframe"></div>
+		        				</td>
+		        				<td width="55%" align="center" rowspan="2">
+		        					<strong><font size="4">Market Index Summary</font></strong>
+		        				</td>
+		        				<td align="right">
+		        					<div id="indexSummaryBrokerLogo" align="center">
+		        						<img src="theme/html/white/atrad/images/logoForReportsNEPSE.png" width="100" height="28" style="margin-top:2px">
+		        					</div>
+		        					<div align="center">
+		        						<a href="http://www.dghub.io"><font style="color: gray;" size="2">www.dghub.io</font></a>
+		        					</div>
+		        				</td>
+		        			</tr>
+		        		</table>
+	        		</div>
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td colspan="3">
+	        		<table width="100%" cellspacing='0'>
+	        			<tr>
+		        			<td width="4%">
+		        				<label for="name"><font face="tahoma" size='2'>Exchange  </font></label>
+		        				<input type="hidden" id="mrktIndexBrokerId">
+		        			</td>
+		        			<td width="1%">: </td>
+		        			<td width="4%" id="mrktIndexLblExchnge" align="left"><font face="tahoma" size='2'></font></td>
+		        			<td width="4%"></td>
+		        			<td width="3%">
+		        				<label for="name"><font face="tahoma" size='2'>Date  </font></label>
+		        			</td>
+		        			<td width="1%">:</td>
+		        			<td id="mrktIndexLblDate" align="left"><font face="tahoma" size='2'></font></td>
+	        			</tr>
+	        		</table>
+	        	</td>
+	        </tr>
+	        <tr>
+	        	<td colspan="3" height="3px"></td>
+	        </tr>
+	    </table>
+		<div id="mrktIndexScrolling" class="mrktIndexScrolling">
+			<div class="gridBg" id="mrktIndexSummaryDataGrid" style="width:830px;height:465px" dojoType="dijit.layout.ContentPane">      
+			</div>
+			<table id="topSummaryGrids" width="830px" height="300px">
+				<tr>
+					<td colspan="2" height="5px"></td>
+				</tr>
+				<tr>
+		    		<td style="width:415px;height:12px"><strong><font size="4" style='font-weight:bold'>&nbsp;  Top Gainers</font></strong></td>
+		    		<td style="width:413px;height:12px"><strong><font size="4" style='font-weight:bold'>&nbsp;  Top Losers</font></strong></td>
+		    	</tr>
+				<tr>
+					<td style="width:415px;height:132px;">
+						<div class="gridBg" id="topGainersGrid" style="height:130px" dojoType="dijit.layout.ContentPane">  
+				    	</div>
+					</td>
+					<td style="width:413px;height:132px">
+						<div class="gridBg" id="topLosersGrid" style="height:130px" dojoType="dijit.layout.ContentPane">  
+				    	</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" height="5px"></td>
+				</tr>
+				<tr>
+		    		<td style="width:415px;height:12px"><strong><font size="4" style='font-weight:bold'>&nbsp;  Top Share Volumes</font></strong></td>
+		    		<td style="width:413px;height:12px"><strong><font size="4" style='font-weight:bold'>&nbsp;  Top Turnovers</font></strong></td>
+		    	</tr>
+				<tr>
+					<td style="width:415px;height:132px">
+						<div class="gridBg" id="topShareVolumeGrid" style="height:130px" dojoType="dijit.layout.ContentPane">  
+				    	</div>
+					</td>
+					<td style="width:413px;height:132px">
+						<div class="gridBg" id="topTurnoversGrid" style="height:130px" dojoType="dijit.layout.ContentPane">  
+				    	</div>
+				    </td>
+				</tr>
+			</table>
+			
+		</div>
+		<div class="popFooter">
+			<table width="98%">
+				<tr>
+					<td align="right">
+						<button data-dojo-type="dijit.form.Button" id="butmrktIndexClose">Close</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

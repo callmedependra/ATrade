@@ -1,0 +1,1 @@
+define("dijit/_base/window",["dojo","dijit","dojo/window"],function(a,b){b.getDocumentWindow=function(c){return a.window.get(c);};return b;});

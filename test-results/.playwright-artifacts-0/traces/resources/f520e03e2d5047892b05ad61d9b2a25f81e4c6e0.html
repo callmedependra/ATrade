@@ -1,0 +1,104 @@
+<!------------------------------------------------------------------------------->
+<div id="stat">
+  <div class="functionBar">
+    <table border="0" cellpadding="0" cellspacing="0" class="blueText">
+    <tr>
+      <td width="70" height="20" align="left" valign="middle" id="_atrad_searchStat"></td>
+      </tr>
+  </table>
+</div>
+<div class="popupBody">
+
+<div style="float:left; width:810px; height:25px; padding-bottom:3px" >
+  <table border="0" align="left" cellpadding="0" cellspacing="0" width="200px">
+    <tr>
+      <td width="100px" height="25" align="left" valign="middle" id="_atrad_lbl_sec" atLangID="javascriptStatisticSecurity" >Security </td>
+      <td width="10px" align="left" valign="middle">:</td>
+      <td width="250px" align="left" valign="middle" id="_atrad_lbl_secName" ></td>
+      <td width="20px" align="left" valign="middle" >&nbsp;</td>
+    </tr>
+  </table>
+  <table border="0" align="left" cellpadding="0" cellspacing="0" width="600px">
+    <tr>
+      <td width="100px" height="25" align="left" valign="middle" id="_atrad_lbl_comp" atLangID="javascriptStatisticCompany" >Company </td>
+      <td width="10px" align="left" valign="middle">:</td>
+      <td width="270px" align="left" valign="middle" id="_atrad_lbl_compName"></td>
+      <td align="right"> <button data-dojo-type="dijit.form.Button" id="_atrad_btnRefresh">Refresh</button></td>
+    </tr>
+  </table>
+</div>
+<div class="clear"></div>
+<div dojoType="dijit.layout.TabContainer" style="width:100%;height:350px;">
+	<div dojoType="dijit.layout.ContentPane" title="Statistics" selected="true" style="width:100%;" class="statTab">
+		<table width="795" border="0" cellspacing="0" cellpadding="0">
+		  <tr >
+			<td width="250" valign="top">
+			    <div id="_atrad_statDataGridToday" style="height: 280px;>
+			    </div>
+			</td>
+			<td width="10" rowspan="3"></td>
+			<td width="540" valign="top"><div class="gridBg" id="_atrad_gridstat" style="height: 310px; min-width: 500px">
+					
+			</div></td>
+		    <!--<td width="10" rowspan="3"></td>
+		    <td width="260" valign="top"><div id="_atrad_statDataGridAllTime">	
+		    </div></td>-->
+		  </tr>
+		 <!-- <tr>
+		    <td height="10"></td>
+		    <td height="10"></td>
+		    <td height="10"></td>
+		  </tr>
+		  <tr>
+		    <td valign="top"><div id="_atrad_statDataGridWeek" >		
+		    </div></td>
+		    <td valign="top"><div id="_atrad_statDataGridMonth" >
+		   </div></td>
+		    <td valign="top"><div id="_atrad_statDataGridYear" >
+		    </div></td>
+		  </tr>-->
+		</table>
+	</div>
+	<div dojoType="dijit.layout.ContentPane" title="More" class="statTab">
+		<table width="795" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="240px"> <div id="_atrad_statDataGridWeek" style="height: 140px;">
+			    </div></td>
+				<td width="240px"><div id="_atrad_statDataGridMonth" style="height: 140px;">
+			    </div></td>
+				<td width="240px"> <div id="_atrad_statDataGridYear" style="height: 140px;">
+			    </div> </td>
+				<td id="_atrad_wtdhigh"> </td>
+			</tr>
+			<tr>
+				<td colspan="4" height="10px"> </td>
+			</tr>
+			<tr>
+				<td width="240px">
+					<div id="_atrad_statDataGrid52week" style="height: 140px;">
+			    	</div>
+				</td>
+				<td width="240px"><div id="_atrad_statDataGridAllTime" style="height: 140px;">
+			    </div></td>
+				<td width="240px"> <div id="_atrad_statDataGridOther" style="height: 140px;">
+			    </div> </td>
+				<td id="_atrad_wtdlow"> </td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<div class="popFooter">
+<div class ="statRefreshCursor" id="_atrad_statRefreshCursor"></div>
+<button data-dojo-type="dijit.form.Button" id="_atrad_btnStatBuy">Buy</button>
+<button data-dojo-type="dijit.form.Button" id="_atrad_btnStatSell">Sell</button>
+<button data-dojo-type="dijit.form.Button" id="_atrad_btnStatOrderbook">Market Depth</button>
+<button data-dojo-type="dijit.form.Button" id="_atrad_btnStatTradebook">TradeBook</button>
+<button data-dojo-type="dijit.form.Button" id="_atrad_btnStatClose"  >Close</button>
+
+</div>
+</div>
+<div class="clear"></div>
+</div>
+<!------------------------------------------------------------------------------->

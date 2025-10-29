@@ -1,0 +1,103 @@
+<div id="marketTS" >
+<div class="functionBar blueText">
+<table>
+<tr>
+<td width="50"><span atLangID="javascriptPortfolioSecurity">Security</span></td>
+<td>:</td>
+<td><input	id="mtsSecurityddl" name="ddlSecurity" 
+							dojoType="dijit.form.ComboBox"  style="width:163px; float: left;" autoComplete="false"></input></td>
+<td width="40px"></td>
+<td><span atLangID="javascriptTime">Time</span>-</td>
+<td width="40px" align="right"><span atLangID="javascriptFrom">From</span></td>
+<td>:</td>
+<td width="95"><input id="txtMtsFrom"   style="width: 95px" regExp="\b([0-1]{1}[0-9]{1}|[2]{1}[0-3]{1})\:[0-5]{1}[0-9]{1}" required="false" invalidMessage="Invalid time format. Format H24:MM" dojoType="dijit.form.ValidationTextBox" name="txtMtsFrom"/></td>
+<td></td>
+<td><span atLangID="javascriptaccountStatementDateTo">To</span></td>
+<td>:</td>
+<td width="95"><input id="txtMtsto"   style="width: 95px" regExp="\b([0-1]{1}[0-9]{1}|[2]{1}[0-3]{1})\:[0-5]{1}[0-9]{1}" required="false" invalidMessage="Invalid time format. Format H24:MM" dojoType="dijit.form.ValidationTextBox" name="txtMtsto"/></td>
+</tr>
+<tr height="5">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td width="100">(Format H24:MM)</td>
+<td></td>
+<td></td>
+<td></td>
+<td width="100">(Format H24:MM)</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td width="50"><span atLangID="javascriptBuyOrderBoard">Board</span> </td>
+<td>:</td>
+<td><input dojoType="dijit.form.RadioButton" id="mtsBoardAll" name="b"  checked="checked" value="all" type="radio" />
+  <label for="val1"> All </label></td>
+<td><input dojoType="dijit.form.RadioButton" id="mtsBoardRegular" name="b"  value="1" type="radio" />
+  <label for="val1"> Regular </label></td>
+
+  <td width="50"></td>
+  <td>Asset</td>
+  <td>:</td>
+  <td><select id="mtsAsset" name="mtsAsset" dojoType="dijit.form.ComboBox" autoComplete="false" style="width:100px; " >
+     		 <option value="1">Equity</option>
+     		 <option value="4">MF</option>
+     		 <option value="5">NCD</option>           		
+       		  </select></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<td><span id="lblLstRefTime"  atLangID="javascriptMarketTimeSaleRefreshTime" class="fontBold">Last Refresh Time : </span></td>
+			<td width="260">
+			<span
+			id="lblLstRefreshTime"></span>
+			</td>
+			<td>
+			<span id="imgmtsRefreshCursor" class="mtsRefreshCursor"></span>
+			</td>
+			<td>
+			<button
+				dojoType="dijit.form.Button" type="button" 
+				id="mtsSearchBut">Search</button>
+			</td>
+			<td>
+			<button dojoType="dijit.form.Button"  id="btnMtsClear" ><span atLangID="javascriptClearBtnText">Clear</span></button>
+			
+			</td>
+			<td>
+			<button
+				dojoType="dijit.form.Button" type="button" 
+				id="butRefreshBut">Refresh</button>
+			</td>
+			
+</tr>
+</table>
+
+
+  
+</div>
+<div style="padding-bottom: 0px"></div>
+<div class="popupBody TableCol">
+<div id="grdmtsData" dojoType="dijit.layout.ContentPane"
+	class="mtsGridContainer">
+	</div>
+</div>
+<div class="popFooter">
+<div class="inline"><span id="preBtnContainer" ><button
+				dojoType="dijit.form.Button" type="button" 	id="btnPreviousPageBut" atLangID="javascriptMarketTimeSalePrevButLbl">Previous</button></span>
+				<span id="lblNavigation"  atLangID="javascriptMarketTimeSaleNavigation">Go to:</span><input id ="spnPageNoBox" required="true"  name="spnPageNoBox" dojoType="dijit.form.NumberSpinner" style="width: 100px;" value= '1', constraints="{min:1}" /><span><span id="lblOfText"  atLangID="javascriptMarketTimeSaleOfText">of</span><span id="lblPageNo" >1</span><button
+				dojoType="dijit.form.Button" type="button" 	id="btnGoBut" atLangID="javascriptMarketTimeSaleGoButLbl">Go</button></span><span id="nextBtnContainer"><button
+				dojoType="dijit.form.Button" type="button" 	id="btnNextPageBut" atLangID="javascriptMarketTimeSaleNextButLbl">Next</button></span></div>
+
+<div >
+<button dojoType="dijit.form.Button" type="button"
+		 id="butmtsClose">&nbsp;Close&nbsp;</button></div>
+</div>
+</div>

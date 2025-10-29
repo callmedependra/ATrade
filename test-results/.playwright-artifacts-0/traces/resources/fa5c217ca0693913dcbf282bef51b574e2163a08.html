@@ -1,0 +1,76 @@
+<div id="tradeB">
+ <div class="functionBar">
+  <table border="0" cellpadding="0" cellspacing="0" >
+<!--    <tr>
+      <td colspan="3" align="left"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="250" align="left" id="_atrad_lblcompName" ><strong> </strong></td>
+          <td align="left" width="20">&nbsp;</td>
+          <td width="50" align="left"  >Board :</td>
+          <td width="55" align="left" id="_atrad_lblbordId" >
+          	<select id="_atrad_cmbBordId" name="cmbBordId" dojoType="dijit.form.Select" autoComplete="false" type="text" style="width:80px; ">
+          		<option value="1">REGULAR</option>
+          		<option value="4">CROSSING</option>
+          		 <option value="5">AON</option>
+          		<option value="6">TOM</option>
+          	</select>
+          </td>
+        </tr> 
+      </table></td>
+      </tr> --> 
+    <tr>
+      <td height="5" colspan="3" align="left"></td>
+      </tr>
+    <tr>
+      <td height="2" colspan="3" align="left" class="tradeBookImg" repeat-x"></td>
+      </tr>
+    <tr >
+    <td  colspan="3" align="left" id="_atrad_searchtrdbk" ></td>
+    </tr>
+    </table>
+  </div> 
+  <div class="clear"></div>
+  <div class="popupBody">
+<div style="float:left; height:auto;  padding-left:2px">
+  <table  border="0" cellpadding="0" cellspacing="0" width="380">
+  <tr>
+<!--   <td  width="68" align="left" id="_atrad_lblLstTradePrice" atLangID="javascriptTradePrice" class="fontBold">Last Trade Price</td>-->
+<!--          <td  align="left" >:</td>-->
+          <td  align="left" id="_atrad_lblLstTrd" ><strong></strong></td>
+        
+    <td width="5">&nbsp;</td>
+      <td  align="left">
+       <td  width="90" align="left" id="_atrad_lblTotTrades" atLangID="javascriptTotTrades" class="fontBold">Total Trades</td>
+          <td  align="left" >:</td>
+          <td align="left" id="_atrad_txtTotTrds"></td>
+          <td width="5"></td>
+          <td  width="60" align="left" id="_atrad_lblTotVol" atLangID="javascriptTradeBookTotVol" class="fontBold">Total Vol</td>
+          <td  align="right" >:</td>
+          <td align="right" id="_atrad_lblTotVolume" ></td>
+          
+          <td align="right" id="_atrad_trdbookRefreshCursor" class="tradeBookRefreshCursor">&nbsp;</td>
+         <td align="right"><button data-dojo-type="dijit.form.Button"  id="_atrad_butRefreshBut">Refresh</button></td>
+      
+    </tr>
+    
+   </table>
+    
+</div>
+<div class="clear"></div>
+<div class="gridBg" >
+  <div id="_atrad_grdDataGrid" dojoType="dijit.layout.ContentPane"></div>
+</div>
+</div>
+<div class="popFooter">
+<div class="inline"><span id="_atrad_preBtnContainer" ><button
+				dojoType="dijit.form.Button" type="button" 	id="_atrad_btnPreviousPageBut" atLangID="javascriptMarketTimeSalePrevButLbl">Previous</button></span>
+				<span id="_atrad_lblNavigation"  atLangID="javascriptMarketTimeSaleNavigation">Go to:</span><input id ="_atrad_spnPageNoBox" required="true"  name="spnPageNoBox" dojoType="dijit.form.NumberSpinner" style="width: 100px;" value= '1', constraints="{min:1}" /><span><span id="_atrad_lblOfText"  atLangID="javascriptMarketTimeSaleOfText">of</span><span id="_atrad_lblPageNo" >1</span><button
+				dojoType="dijit.form.Button" type="button" 	id="_atrad_btnGoBut" atLangID="javascriptMarketTimeSaleGoButLbl">Go</button></span><span id="_atrad_nextBtnContainer"><button
+				dojoType="dijit.form.Button" type="button" 	id="_atrad_btnNextPageBut" atLangID="javascriptMarketTimeSaleNextButLbl">Next</button></span></div>
+
+<button data-dojo-type="dijit.form.Button" id="_atrad_btntrbClose" >Close</button></div>
+
+<div class="clear"></div>
+</div>	
+
+

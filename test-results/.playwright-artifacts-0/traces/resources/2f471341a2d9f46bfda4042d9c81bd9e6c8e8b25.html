@@ -1,0 +1,75 @@
+<div id="manageAlerts" class ="manageAlerts">
+	<div class ="functionBar">
+		<table>
+			<tr>
+				<td width='50%'>
+					<button type="button" dojoType="dijit.form.Button" id="btnAddAlertPrice">Set Price Alert</button>
+				</td>
+				<td width='50%'>
+					<button type="button" dojoType="dijit.form.Button" id="btnAddAlertNews">Set News Alert</button>
+				</td>
+			</tr>
+		</table>
+	
+	</div>
+	<div class="popupBody">
+		<div dojoType="dijit.layout.TabContainer" style="width:100%;height:320px;">
+			<div dojoType="dijit.layout.ContentPane" title="PRICE" selected="true" style="width:100%;" class="statTab" id="manAlertPriceTab" >
+				<table border="0" cellspacing="0" cellpadding="0" class="bluetext" width="100%" style="padding: 2px;">
+				 	<tr>
+				 		<td colspan="7" height="7px"></td>
+				 	</tr>
+				 	<tr>
+				 		<td width="65px" height="22" align="left" valign="middle">Alert Name</td>
+				 		<td width="5px" align="left" valign="middle">:</td>
+				 		<td width="120"><input id="manAlertNamePrice" name="manAlertNamePrice" dojoType="dijit.form.ValidationTextBox" ></td>
+				 		<td width="15px"></td>
+				 		<td align="left" valign="middle" class="boldText">Security</td>
+			      		<td width="5px" align="left" valign="middle">:</td>
+			      		<td valign="middle"><input type="text" name="manAlertsecurityListPrice" value=""  trim="true" id="manAlertsecurityListPrice" propercase="true" style="width:300px"></td>
+				 		<td width="250px"></td>
+				 		<td>
+				 			<button type ="button" dojoType="dijit.form.Button" id="manAlertSearchPrice">Search</button>
+				 			<button type ="button" dojoType="dijit.form.Button" id="manAlertClearPrice">Clear</button>
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td colspan="7" height="7px"></td>
+				 	</tr>
+				</table>
+				<div id = "manAlertPriceGrid" dojoType = "dijit.layout.ContentPane" class = "alertGridContainer"></div>
+			</div>
+			<div dojoType="dijit.layout.ContentPane" title="NEWS" selected="true" style="width:100%;" class="statTab"  id="manAlertNewsTab">
+				<table border="0" cellspacing="0" cellpadding="0" class="bluetext" width="100%" style="padding: 2px;">
+				 	<tr>
+				 		<td colspan="7" height="7px"></td>
+				 	</tr>
+				 	<tr>
+				 		<td width="65px" height="22" align="left" valign="middle">Alert Name</td>
+				 		<td width="5px" align="left" valign="middle">:</td>
+				 		<td width="120"><input id="manAlertNameNews" name="manAlertNameNews" dojoType="dijit.form.ValidationTextBox" ></td>
+				 		<td width="15px"></td>
+				 		<td align="left" valign="middle" class="boldText">Security</td>
+			      		<td width="5px" align="left" valign="middle">:</td>
+			      		<td valign="middle"><input type="text" name="manAlertsecurityListNews" value=""  trim="true" id="manAlertsecurityListNews" propercase="true" style="width:300px"></td>
+				 	<td align="center">
+				 			<button type ="button" dojoType="dijit.form.Button" id="manAlertSearchNews">Search</button>
+				 			<button type ="button" dojoType="dijit.form.Button" id="manAlertClearNews">Clear</button>
+				 		</td>
+				 	</tr>
+				 	<tr>
+				 		<td colspan="7" height="7px"></td>
+				 	</tr>
+				 </table>
+				 <div >
+					<div id = "manAlertNewsGrid" dojoType = "dijit.layout.ContentPane" class = "alertGridContainer"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class = "popFooter">
+		
+					<button type ="button" data-dojo-type="dijit.form.Button" id="butCloseManAlert" >Close</button>
+				
+	</div>
+</div>

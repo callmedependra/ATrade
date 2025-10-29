@@ -1,0 +1,180 @@
+<div id="accStmt">
+<div class="functionBar" style="padding-bottom: 5px;">
+<div dojoType="dijit.form.Form" id="accStmtForm" name="accStmtForm" action="client" onSubmit="return false;" class="blueText">
+
+			<input type="hidden" id="accpos_action" name="action" value =""/>
+
+    		<input type="hidden" id="accpos_exchange" name="exchange" value =""/>
+
+    		<input type="hidden" id ="accpos_format" name="format" value =""/>
+
+    		<input type="hidden" id ="accpos_broker" name="broker" value =""/>
+
+<table width="1100px" border="0" cellpadding="0" cellspacing="0" class="blueText">
+	<tr>
+		<td width="35px" align="left" valign="middle" id="lblaccStmtNo" atLangID="javascriptaccountStatementAccNo">UCC</td>
+		<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>		
+		<td width="250px" align="left" valign="middle">
+			<select id="ddlaccStmtSelect" name="accStmtSelect" dojoType="dijit.form.ComboBox" autoComplete="false" type="text" style="width:250px; "></select>
+		</td>		
+		<td width="30px" align="left" valign="middle" id="lblaccStmtDate" atLangID="javascriptaccountStatementDateFrom">Display from</td>
+      	<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+      	<td width="80px"><input id="accStmtdate" name="accStmtdate" type="text" dojoType="dijit.form.DateTextBox"  value="now" constraints="{datePattern:'MM/dd/yyyy'}" ></td> 
+      	<td width="10px" align="left" valign="middle"></td>        	
+      	<td width="30px" id="lblaccstmtTo" atLangID="javascriptaccountStatementDateTo"><strong>To</strong></td>
+      	<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+      	<td width="80px"><input name="accStmtTodate" id="accStmtTodate" value="now" dojoType="dijit.form.DateTextBox" required="true" constraints="{datePattern:'MM/dd/yyyy'}"> </td> 
+	</tr>
+	
+	<tr>
+		<td  width="35px" align="left" valign="middle" id="lblaccStmtNamelbl" atLangID="javascriptaccountStatementName">Name</td>
+      	<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+      	<td width="250px" align="left" valign="middle" id="lblaccStmtName"></td>      	
+      	<td width="30px" align="left" valign="middle" id="lblaccStmtTplbl" atLangID="javascriptaccountStatementTelePhone">Telephone</td>
+      	<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+	  	<td width="80px" align="left" valign="middle" id="lblaccStmtTp"></td> 
+	  	<td width="10px" align="left" valign="middle"></td>  
+	  	<td align="left" width="30px" valign="middle" id="lblaccStmtBuyingPower" atLangID="javascriptBuyOrderBuyingPower">Buying Power</td>
+	    <td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+	    <td width="80px" height="22" align="left" valign="middle">
+	      <span id="txtaccStmtBuyingPower" class="fontBold"></span>	   
+	    </td>
+	</tr>
+	
+	<tr>
+		<td  width="35px" align="left" valign="middle" id="lblaccStmtAddreslbl" atLangID="javascriptaccountStatementAddress">Address</td>
+      	<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+      	<td width="250px" align="left" valign="middle" id="lblaccStmtAddres"></td>
+		<td width="30px" align="left" valign="middle" id="lblaccStmtAdvisor" atLangID="javascriptaccountStatementAdvisor">Investment Advisor</td>
+      	<td width="5px" align="left" valign="middle" style="padding: 5px;">:</td>
+      	<td width="80px" align="left" valign="middle" id="lblaccStmtInvestAdvisor" ></td>
+      	<td colspan="4" align="left">      		
+       		<span id="accStmtRefreshCursor" style="float: none; width: 30px; height:40px; padding-right: 40px;"></span>
+       		<button data-dojo-type="dijit.form.Button" id="butaccGo" atLangID="javascriptAccountStatementGo">Search</button> 
+       		<button data-dojo-type="dijit.form.Button" id="butAddCol" atLangID="javascriptAccountStatementAddCol">Add Collateral</button> 
+       		<button dojoType="dijit.form.Button" id="printAccountStatment"></button>
+     		<button dojoType="dijit.form.Button" id="saveAccountStatment"></button>
+       	</td>
+      		
+	</tr>
+	
+	
+
+<!--  
+    <tr>
+
+      <td width="40" align="left" valign="middle" id="lblaccStmtNo" atLangID="javascriptaccountStatementAccNo">A/C No</td>
+
+      <td width="5" align="left" valign="middle">:</td>
+
+      <td width="300" align="left" valign="middle"><select id="ddlaccStmtSelect" name="accStmtSelect" dojoType="dijit.form.ComboBox" autoComplete="false" type="text" style="width:300px; ">
+
+        </select></td>
+
+      <td width="10" align="left" valign="middle">&nbsp;</td>
+
+      <td width="95" align="left" valign="middle" id="lblaccStmtAdvisor" atLangID="javascriptaccountStatementAdvisor">Investment Advisor</td>
+
+      <td width="5" align="left" valign="middle">:</td>
+
+      <td width="150" align="left" valign="middle" id="lblaccStmtInvestAdvisor" ><strong></strong>
+      </td>
+	<td>
+	 <div dojoType="dijit.form.Button" id="printAccountStatment"></div>
+     <div dojoType="dijit.form.Button" id="saveAccountStatment"></div>
+	</td>
+      </tr>
+
+    <tr>
+
+      <td align="left" valign="middle" id="lblaccStmtNamelbl" atLangID="javascriptaccountStatementName">Name</td>
+
+      <td align="left" valign="middle">:</td>
+
+      <td align="left" valign="middle" id="lblaccStmtName" style="
+    display: block;
+    height: 15px;
+    overflow: hidden;
+"><strong ></strong></td>
+
+      <td align="left" valign="middle">&nbsp;</td>
+
+      <td align="left" valign="middle" id="lblaccStmtDate" atLangID="javascriptaccountStatementDateFrom">Display from</td>
+
+      <td align="left" valign="middle">:</td>
+
+      <td height="22" align="left" valign="middle" colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+
+        <tr>
+
+          <td><input id="accStmtdate" name="accStmtdate" type="text" dojoType="dijit.form.DateTextBox"  value="" ></td>
+
+          <td width="10">&nbsp;</td>
+
+          <td id="lblaccstmtTo" atLangID="javascriptaccountStatementDateTo"><strong>To</strong></td>
+
+          <td width="10"></td>
+			<td><input name="accStmtTodate" id="accStmtTodate" value="" dojoType="dijit.form.DateTextBox"
+
+  			required="true"> </td>
+          <td width="70">
+	          <button data-dojo-type="dijit.form.Button" id="butaccGo" atLangID="javascriptAccountStatementGo">Go</button>
+	          <span id="accStmtRefreshCursor" height="10px"></span>
+          </td>
+
+          </tr>
+
+        </table>        </td>
+
+      </tr>
+
+    <tr>
+
+      <td align="left" valign="middle" id="lblaccStmtAddreslbl" atLangID="javascriptaccountStatementAddress">Address</td>
+      <td align="left" valign="middle">:</td>
+      <td align="left" valign="middle" id="lblaccStmtAddres"></td>      
+      <td align="left" valign="middle">&nbsp;</td>             
+      
+      <td align="left" valign="middle" id="lblaccStmtTplbl" atLangID="javascriptaccountStatementTelePhone">Telephone</td>
+      <td align="left" valign="middle">:</td>
+	  <td align="left" valign="middle" id="lblaccStmtTp"><strong></strong></td>  
+	  	  	      
+	  <td>
+	  <table>
+	    <tr>
+	      <td align="left" width="70" valign="middle" id="lblaccStmtBuyingPower" atLangID="javascriptBuyOrderBuyingPower">Buying Power</td>
+	      <td align="left" valign="middle">:</td>
+	      <td height="22" align="left" valign="middle">
+	      	<span id="txtaccStmtBuyingPower" class="fontBold"></span>	   
+	      </td>
+	     </tr> 
+      </table>
+      </td>
+    </tr>
+-->
+
+
+  </table>
+  <form id='hiddenAccntStmantForm' method='post' action='client' target='TheNewWindow'>
+  <input id="format" type='hidden' name='format' value='csv'>
+  <input id="content" type='hidden' name='content' value=''>
+   <input id="action" type='hidden' name='action' value='returncsv'>
+  <input id="title" type='hidden' name='title' value=''>
+</form>
+</div>
+</div>
+<div class="popupBody">
+	<div height="270px" id="grdaccsmtDataGrid" dojoType="dijit.layout.ContentPane" class="grid padded-table"></div>
+	<div class="popFooter">
+	<table>
+		<tr>
+
+			<td class="blueText note2" width="1000"></td>
+			<td width="73" align="right">
+				<button data-dojo-type="dijit.form.Button" id="butaccClose">Close</button></div>
+		</td>
+		</tr>
+	</table>
+	</div>	
+</div>
+</div>

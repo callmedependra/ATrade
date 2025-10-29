@@ -1,0 +1,72 @@
+#preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding:0;
+    background:#fff;
+    z-index:999;
+}
+#preloaderContent {
+    position: absolute;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 25px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+.dijitTitlePaneContentInner{
+	display:none;
+}
+
+/*removed by abul 
+#userControl{
+	display:none;
+}*/
+
+#footer{
+	display:none;
+}
+.watchGridContainer2{
+	display:none;
+}
+
+#watchCollapsibleMenu{
+	display:none;
+}
+
+#gridContainer4{
+	display:none;
+}
+
+#mainNavi .main{
+	display:none;
+}
+
+#watchBoard{
+	display:none;
+}
+
+@media (max-width: 1280px) and (min-width: 720px){
+#NaviMaster{
+	
+}
+	#NaviMaster	#userControl{
+		
+	}
+	#NaviMaster #mainNavi{
+		margin: 0px;
+	}
+}
+@media (max-width: 1120px) and (min-width: 720px){
+#watchStatusBar {
+	font-size: 10px;
+	}
+}
+@media (max-width: 720px){  
+	#NaviMaster #mainNavi{
+		display:none;
+	}
+}

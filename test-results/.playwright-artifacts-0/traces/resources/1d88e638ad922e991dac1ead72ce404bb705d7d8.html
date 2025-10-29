@@ -1,0 +1,99 @@
+<div dojoType="dijit.form.Form" id="changePasswordForm" jsId="changePasswordForm"
+				name="changePasswordForm" action="client" encType="multipart/form-data"
+				method="post">
+		<input type="hidden" id="action" name="action" value="changePassword" />
+		<input type="hidden" id="format" name="format" value="json" />
+	<div class="functionBar">
+		<div id="changePassword" class="info">
+            <span class="info-icon">
+                <img src="theme/html/blue/atrad/images/icon-info.svg" width="20" height="20" />                             
+            </span>
+            <span class="info-message"><strong>Following special characters are not allowed <span class="info-chars">(# % & +)</span></strong></span>           
+       </div>
+		<table border="0" cellpadding="0" cellspacing="0" class="blueText">
+			<tr>
+				<td width="190" height="22" align="left" valign="middle">User name<span
+					class="redText"></span>
+				</td>
+				<td width="10" align="left" valign="middle">:</td>
+				<td height="22" colspan="2"><input
+					type="text" name="txtUsername" id="txtChangePasswordUsername"  dojoType="dijit.form.TextBox"
+					trim="true" value=""/>
+						
+				</td>
+			</tr>
+			<tr>
+				<td height="5" align="left" valign="middle"></td>
+				<td height="5" align="left" valign="middle"></td>
+				<td width="145" height="5" align="left" valign="middle"></td>
+				<td width="20" height="5" align="left" valign="middle"></td>
+			</tr>
+			<tr>
+				<td align="left" valign="middle">Enter current password<span
+					class="redText">*</span>
+				</td>
+				<td align="left" valign="middle">:</td>
+				<td height="22" colspan="2"><input
+					type="password" name="txtOldPassword" id="txtOldPassword"  dojoType="dijit.form.TextBox"
+					trim="true">
+				</td>
+			</tr>
+			<tr align="left">
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+			</tr>
+			<tr>
+				<td align="left" valign="middle">Enter new password<span
+					class="redText">*</span>
+				</td>
+				<td align="left" valign="middle">:</td>
+				<td height="22" colspan="2" ><input
+					type="password" name="txtNewPassword"  dojoType="dijit.form.TextBox"
+					trim="true" id="txtNewPassword">
+				</td>
+			</tr>
+			<tr align="left">
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+			</tr>
+			<tr>
+				<td align="left" valign="middle">Confirm password<span
+					class="redText">*</span>
+				</td>
+				<td align="left" valign="middle">:</td>
+				<td height="22" colspan="2" ><input
+					type="password" name="txtConfirmPassword"  dojoType="dijit.form.TextBox"
+					trim="true" id="txtConfirmPassword">
+				</td>
+			</tr>
+			
+			<tr align="left">
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+				<td height="5" valign="middle"></td>
+			</tr>
+			
+		</table>
+	
+
+	<div class="popupBody">
+		<div class="changePasswordPopFooter"  style="float: left;width: 250px;text-align: left">
+					<span id="messageBox"></span>&nbsp;
+		</div>
+		<div>
+			<button id="btnChangePasswordSubmit" name="btnSubmit" type="submit"
+					dojoType="dijit.form.Button">
+					<span atLangID="javascriptSubmitBtnText">Submit</span>
+			</button>
+			<button id="btnChangePasswordClose" name="btnClose"
+			data-dojo-type="dijit.form.Button">Close</button>
+		</div>	
+	</div>
+	</div>
+	</div>
+	
