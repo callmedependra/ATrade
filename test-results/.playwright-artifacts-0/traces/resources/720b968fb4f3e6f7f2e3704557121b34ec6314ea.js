@@ -1,1 +1,0 @@
-define("dijit/form/ToggleButton",["dojo","dijit","dijit/form/Button"],function(a,b){return b.form.ToggleButton;});

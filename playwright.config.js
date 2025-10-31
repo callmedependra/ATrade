@@ -2,7 +2,8 @@
 import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests', // Directory where your test files are located
+  testDir: './tests',// Directory where your test files are located
+   reporter: [['html', { open: 'never' }]], 
   use: {
     headless: true,                // Run tests in headless mode
     browserName: 'chromium',  

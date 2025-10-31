@@ -9,20 +9,34 @@ export class OrderPage {
 
 
   async getLTP() {
-    
-    const labelCell = this.page.locator('td[id*="lblLTP"]');
 
-    
-    await labelCell.waitFor({ state: 'visible', timeout: 10_000 });
+    // Selector explanation:
+// 'td[id*="lblLTP"]' → selects all <td> elements whose id contains 'lblLTP' anywhere
+// 'td[id$="lblLTP"]' → selects only <td> elements whose id ends exactly with 'lblLTP'
+//
+// Example:
+// <td id="debtorder_0_lblLTP">      → matches both *= and $=
+// <td id="debtorder_0_lblLTPHigh">  → matches *= but NOT $=
+// <td id="some_lblLTPLow">          → matches *= but NOT $=
+  // Locate the LTP label cell
+   const labelCell = this.page.locator('td[id$="_lblLTP"]'); // or '#debtorder_0_lblLTP'
+  await labelCell.waitFor({ state: 'visible', timeout: 10_000 });
+  
+  // const labelCell = this.page.locator('td[id*="lblLTP"]');
+  // await labelCell.waitFor({ state: 'visible', timeout: 10_000 });
 
-    
-    const priceCell = labelCell.locator('xpath=following-sibling::td[1]');
-    const raw = await priceCell.innerText();
-    console.log(`Raw LTP text: "${raw}"`);
+  // Move two siblings forward to get the numeric value
+  const priceCell = labelCell.locator('xpath=following-sibling::td[2]');
+  const raw = await priceCell.innerText();
+  console.log(`Raw LTP text: "${raw}"`);
 
-    const clean = raw.replace(/[^\d.]/g, '');
-    return parseFloat(clean);
-  }
+  // Clean and parse the value
+  const clean = raw.replace(/[^\d.]/g, '');
+  const ltp = parseFloat(clean);
+  console.log(`Parsed LTP value: ${ltp}`);
+  return ltp;
+}
+
 
   async askUserForOrderAction() {
     const rl = readline.createInterface({
@@ -68,7 +82,8 @@ export class OrderPage {
   }
 
 
-  async selectSecurity(security) {        
+
+async selectSecurity(security) {        
   console.log(`Selecting security: ${security}`);
 
   const dropdown = this.page.locator('#debtorder_0_txtSecurity');
@@ -87,33 +102,22 @@ export class OrderPage {
   await suggestion.click();
   console.log(`Security selected: ${security}`);
 
-  // CRITICAL: Wait for LTP to load after selection
-  await this.page.locator('td[id*="lblLTP"]').waitFor({ state: 'visible', timeout: 15000 });
-  console.log('LTP label appeared');
 
-  // Extra: Wait for price cell to have content
-  const priceCell = this.page.locator('td[id*="lblLTP"] >> xpath=following-sibling::td[1]');
-  await expect(priceCell).toHaveText(/[\d.]+/, { timeout: 10000 });
-  console.log('LTP price loaded');
+// CRITICAL: Wait for LTP to load after selection
+await this.page.locator('#debtorder_0_lblLTP').waitFor({ state: 'visible', timeout: 15000 });
+console.log('LTP label appeared');
+
+// Wait for numeric price to appear
+const priceCell = this.page.locator('#debtorder_0_lblLTP').locator('xpath=following-sibling::td[2]');
+await expect(priceCell).toHaveText(/[\d.]+/, { timeout: 10000 });
+console.log('LTP price loaded');
+
+// Optional: log the value
+const ltpValue = await priceCell.innerText();
+console.log('LTP value:', ltpValue);
+
 }
 
-
-  // async selectSecurity(security) {
-  //   console.log(`Selecting security: ${security}`);
-
-  //   // Try the textbox role for the security dropdown
-  //   let dropdown = this.page.locator('#debtorder_0_txtSecurity');
-  //   let isDropdown = await dropdown.isVisible();
-
-  //   // Verify dropdown exists
-  //   if (!isDropdown) {
-  //     throw new Error('Security dropdown not found or not visible');
-  //   }
-
-  //   // Fill the security input to trigger the dropdown
-  //   await dropdown.fill(security);
-  //   console.log('Security dropdown filled');
-  // }
 
   async selectClientUCC(client) {
     console.log(`Selecting client: ${client}`);
@@ -155,17 +159,28 @@ export class OrderPage {
     console.log(`Selected option: ${client}`);
    }
 
-  async placeBuyOrder(client, security, quantity, price = null, tif = 'DAY') {
+
+async placeBuyOrder(client, security, quantity, price = null, tif = 'DAY') {
   await this.selectClientUCC(client);
-  await this.selectSecurity(security);  // Now handles everything!
+  await this.selectSecurity(security);
 
   const ltp = price ?? await this.getLTP();
-  const orderPrice = price ? price : (ltp * 0.995).toFixed(2);
+  const orderPrice = price ?? ltp.toFixed(2);
+  const totalValue = (orderPrice * quantity).toFixed(2);
 
-  console.log(`BUY @ ${orderPrice} (LTP=${ltp})`);
+  console.log(`BUY @ ${orderPrice} x ${quantity} = ${totalValue} (LTP=${ltp})`);
 
-  await this.page.locator('#debtorder_0_spnQuantity').fill(quantity.toString());
-  await this.page.locator('#debtorder_0_spnPrice').fill(orderPrice);
+
+    // Clear and fill quantity
+  const qtyField = this.page.locator('#debtorder_0_spnQuantity');
+  await qtyField.fill('');
+  await qtyField.fill(quantity.toString());
+
+  // Clear and fill price
+  const priceField = this.page.locator('#debtorder_0_spnPrice');
+  await priceField.fill('');
+  await priceField.fill(orderPrice.toString());
+
 
   await this.page.locator('#debtorder_0_cmbTif').click();
   await this.page.getByRole('cell', { name: tif, exact: true }).click();
@@ -174,33 +189,5 @@ export class OrderPage {
   await this.page.getByRole('button', { name: 'Yes' }).click();
 
   await expect(this.page.getByText('Active Order Book')).toBeVisible();
-}}
-
-
-
- //   async placeBuyOrder(client, security, quantity, price=null, tif = 'DAY') {
-  //   // Select client UCC
-  //   await this.selectClientUCC(client);
-
-  //   // Select security
-  //   await this.selectSecurity(security);
-
-  //   //try
-  //   const finalPrice = price ?? await this.getLTP();   // <-- NEW
-  //   console.log(`Using price: ${finalPrice} (LTP)`);
-
-
-  //   await this.page.locator('#debtorder_0_spnQuantity').fill(quantity.toString());
-  //   await this.page.locator('#debtorder_0_spnPrice').fill(finalPrice.toString());
-
-  //   // Select TIF (Time in Force)
-  //   await this.page.locator('#debtorder_0_cmbTif').click();
-  //   await this.page.getByRole('cell', { name: tif, exact: true }).click();
-
-  //   // Submit the order
-  //   await this.page.getByRole('button', { name: 'Buy', exact: true }).click();
-  //   await this.page.getByRole('button', { name: 'Yes' }).click();
-
-  //   // Verify order placement
-  //   await expect(this.page.getByText('Active Order Book')).toBeVisible({ timeout: 5000 });
-  // }}
+}
+}
