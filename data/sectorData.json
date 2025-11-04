@@ -1,0 +1,21 @@
+[
+  { "security": "ADBL", "securityName": "Agricultural Development Bank Limited" },
+  { "security": "CZBIL", "securityName": "Citizens Bank International Limited" },
+  { "security": "EBL", "securityName": "Everest Bank Limited" },
+  { "security": "GBIME", "securityName": "Global IME Bank Limited" },
+  { "security": "HBL", "securityName": "Himalayan Bank Limited" },
+  { "security": "KBL", "securityName": "Kumari Bank Limited" },
+  { "security": "LSL", "securityName": "Laxmi Sunrise Bank Limited" },
+  { "security": "MBL", "securityName": "Machhapuchhre Bank Limited" },
+  { "security": "NABIL", "securityName": "Nabil Bank Limited" },
+  { "security": "NBL", "securityName": "Nepal Bank Limited" },
+  { "security": "NICA", "securityName": "NIC Asia Bank Ltd." },
+  { "security": "NIMB", "securityName": "Nepal Investment Mega Bank Limited" },
+  { "security": "NMB", "securityName": "NMB Bank Limited" },
+  { "security": "PCBL", "securityName": "Prime Commercial Bank Ltd." },
+  { "security": "PRVU", "securityName": "Prabhu Bank Limited" },
+  { "security": "SANIMA", "securityName": "Sanima Bank Limited" },
+  { "security": "SBI", "securityName": "Nepal SBI Bank Limited" },
+  { "security": "SBL", "securityName": "Siddhartha Bank Limited" },
+  { "security": "SCB", "securityName": "Standard Chartered Bank Limited" }
+]
